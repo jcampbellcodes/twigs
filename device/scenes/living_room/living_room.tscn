@@ -6,9 +6,9 @@
 [ext_resource path="res://assets/art/bg/livingroom1.png" type="Texture" id=4]
 [ext_resource path="res://globals/background.gd" type="Script" id=5]
 [ext_resource path="res://demo/actors/player/player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://globals/game.tscn" type="PackedScene" id=7]
-[ext_resource path="res://globals/item.gd" type="Script" id=8]
-[ext_resource path="res://assets/art/bg/chairlivingroomw.png" type="Texture" id=9]
+[ext_resource path="res://globals/item.gd" type="Script" id=7]
+[ext_resource path="res://assets/art/bg/chairlivingroomw.png" type="Texture" id=8]
+[ext_resource path="res://globals/game.tscn" type="PackedScene" id=9]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -16,7 +16,7 @@ vertices = PoolVector2Array( 2195.78, 685.607, 2615.46, 895.611, 2071.55, 843.64
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 2 ), PoolIntArray( 3, 2, 7, 8 ) ]
 outlines = [ PoolVector2Array( 1097.21, 1083.92, 2095.86, 1082.51, 2071.55, 843.649, 2615.46, 895.611, 2195.78, 685.607, 1850, 690, 1550, 690, 1440, 830, 1177.84, 837.887 ) ]
 
-[node name="scene" type="Node2D" index="0"]
+[node name="scene" type="Node2D"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -67,13 +67,11 @@ placeholders = {
 
 }
 
-[node name="game" parent="." index="3" instance=ExtResource( 7 )]
-
-[node name="chair" type="Node2D" parent="." index="4"]
+[node name="chair" type="Node2D" parent="." index="3"]
 
 position = Vector2( 1609.41, 828.534 )
 scale = Vector2( 6.77839, 5.68271 )
-script = ExtResource( 8 )
+script = ExtResource( 7 )
 animations = null
 speed = 300
 scale_on_map = false
@@ -99,9 +97,9 @@ use_custom_z = false
 
 position = Vector2( -0.317017, 22.6608 )
 scale = Vector2( 0.147528, 0.175972 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 offset = Vector2( -14.4648, -147.211 )
-script = ExtResource( 8 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Offset", "Z Index" ]
 animations = null
 speed = 300
@@ -140,5 +138,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+
+[node name="game" parent="." index="4" instance=ExtResource( 9 )]
 
 

@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/art/dialogue_boxes/liam_dialoguebox.png" type="Texture" id=2]
 [ext_resource path="res://demo/ui/dialog_theme.tres" type="Theme" id=3]
 
-[node name="dialog_instance" type="Node2D"]
+[node name="dialog_instance" type="Node2D" index="0"]
 
 z_index = 20
 script = ExtResource( 1 )
@@ -18,8 +18,8 @@ fixed_pos = true
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 712.048, 366.876 )
-scale = Vector2( 2.01466, 3.17426 )
+position = Vector2( 882.518, 823.059 )
+scale = Vector2( 1.01383, 0.950547 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
@@ -32,10 +32,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 868.0
-margin_top = 769.0
-margin_right = 1588.0
-margin_bottom = 991.0
+margin_left = 508.0
+margin_top = 743.0
+margin_right = 1228.0
+margin_bottom = 965.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0

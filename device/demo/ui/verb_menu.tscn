@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://ui/verb_menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/buttons/user/look.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/buttons/user/lookselect.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/buttons/user/look-hover.png" type="Texture" id=4]
+[ext_resource path="res://assets/art/buttons/user/pickup.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/buttons/user/pickupselect.png" type="Texture" id=6]
+[ext_resource path="res://assets/art/buttons/user/pickup-hover.png" type="Texture" id=7]
+[ext_resource path="res://assets/art/buttons/user/talk.png" type="Texture" id=8]
+[ext_resource path="res://assets/art/buttons/user/talkselect.png" type="Texture" id=9]
+[ext_resource path="res://assets/art/buttons/user/talk-hover.png" type="Texture" id=10]
+[ext_resource path="res://assets/art/buttons/user/inventory.png" type="Texture" id=11]
+[ext_resource path="res://assets/art/buttons/user/inventoryselect.png" type="Texture" id=12]
+[ext_resource path="res://assets/art/buttons/user/inventory-hover.png" type="Texture" id=13]
 
 [node name="verb_menu" type="Control"]
 
@@ -31,8 +43,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 
-[node name="use" type="Button" parent="actions" index="0"]
+[node name="use2" type="Button" parent="actions" index="0"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -56,16 +69,17 @@ text = "use"
 flat = false
 align = 1
 
-[node name="look" type="Button" parent="actions" index="1"]
+[node name="look2" type="Button" parent="actions" index="1"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 14.0
-margin_top = 9.0
-margin_right = 138.0
-margin_bottom = 37.0
+margin_top = 10.0
+margin_right = 460.0
+margin_bottom = 424.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -78,11 +92,12 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 text = "look"
-flat = false
+flat = true
 align = 1
 
-[node name="talk" type="Button" parent="actions" index="2"]
+[node name="talk2" type="Button" parent="actions" index="2"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -106,8 +121,9 @@ text = "talk"
 flat = false
 align = 1
 
-[node name="open" type="Button" parent="actions" index="3"]
+[node name="open2" type="Button" parent="actions" index="3"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -131,8 +147,9 @@ text = "open"
 flat = false
 align = 1
 
-[node name="pick_up" type="Button" parent="actions" index="4"]
+[node name="pick_up2" type="Button" parent="actions" index="4"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -155,5 +172,117 @@ group = null
 text = "pick up"
 flat = false
 align = 1
+
+[node name="look" type="TextureButton" parent="actions" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 180.0
+margin_top = -800.0
+margin_right = 320.0
+margin_bottom = -660.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+texture_focused = ExtResource( 3 )
+expand = true
+_sections_unfolded = [ "Textures" ]
+
+[node name="use" type="TextureButton" parent="actions" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 30.0
+margin_top = -780.0
+margin_right = 190.0
+margin_bottom = -640.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+texture_focused = ExtResource( 6 )
+expand = true
+_sections_unfolded = [ "Textures" ]
+
+[node name="talk" type="TextureButton" parent="actions" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 110.0
+margin_top = -660.0
+margin_right = 260.0
+margin_bottom = -520.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+texture_focused = ExtResource( 9 )
+expand = true
+_sections_unfolded = [ "Textures" ]
+
+[node name="backpack" type="TextureButton" parent="actions" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 60.0
+margin_top = 70.0
+margin_right = 240.0
+margin_bottom = 230.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 13 )
+texture_focused = ExtResource( 12 )
+expand = true
+_sections_unfolded = [ "Textures" ]
 
 

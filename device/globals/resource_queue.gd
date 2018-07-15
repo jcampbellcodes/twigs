@@ -103,6 +103,10 @@ func _wait_for_resource(res, path):
 func get_resource(path):
 	_lock("get_resource")
 	if path in pending:
+		print("PRINTING PATH")
+		print(pending)
+		print(path)
+		print(pending[path].res)
 		if pending[path].res is ResourceInteractiveLoader:
 			var res = pending[path].res
 			if res != queue[0]:

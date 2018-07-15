@@ -3,7 +3,7 @@ extends Node2D
 var context
 var text
 var elapsed = 0
-var total_time
+var total_time = 0
 var character
 export var typewriter_text = true
 export var characters_per_second = 45.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://globals/dialog_dialog.gd" type="Script" id=1]
-[ext_resource path="res://demo/ui/dd_background.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/dialogue_boxes/liam_dialoguebox.png" type="Texture" id=2]
 [ext_resource path="res://demo/ui/dialog_theme.tres" type="Theme" id=3]
 
 [sub_resource type="Animation" id=1]
@@ -100,9 +100,12 @@ mouse_exit_shadow_color = Color( 1, 1, 1, 1 )
 
 [node name="anchor" type="Node2D" parent="." index="0"]
 
+visible = false
+scale = Vector2( 1, 1e-05 )
+
 [node name="bg" type="TextureRect" parent="anchor" index="0"]
 
-modulate = Color( 0, 0, 0, 0.392157 )
+modulate = Color( 0.542969, 0.420363, 0.420363, 0.392157 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -118,6 +121,7 @@ size_flags_vertical = 0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 0
+_sections_unfolded = [ "Visibility" ]
 
 [node name="scroll" type="ScrollContainer" parent="anchor" index="1"]
 

@@ -18,8 +18,8 @@ fixed_pos = true
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 712.048, 366.876 )
-scale = Vector2( 2.01466, 3.17426 )
+position = Vector2( 918.256, 819.953 )
+scale = Vector2( 1.0757, 0.96593 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
@@ -32,10 +32,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 868.0
-margin_top = 769.0
-margin_right = 1588.0
-margin_bottom = 991.0
+margin_left = 573.0
+margin_top = 749.0
+margin_right = 1293.0
+margin_bottom = 971.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
