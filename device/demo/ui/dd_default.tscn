@@ -76,7 +76,7 @@ tracks/2/keys = {
 "values": [ true ]
 }
 
-[node name="dialog" type="Control" index="0"]
+[node name="dialog" type="Control"]
 
 anchor_left = 0.5
 anchor_top = 0.0
@@ -139,6 +139,7 @@ scroll_horizontal_enabled = true
 scroll_horizontal = 0
 scroll_vertical_enabled = true
 scroll_vertical = 0
+scroll_deadzone = 0
 
 [node name="container" type="VBoxContainer" parent="anchor/scroll" index="0"]
 

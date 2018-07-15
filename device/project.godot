@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="twigs research"
-run/main_scene="res://scenes/kings_crown_lane/living_room.tscn"
+run/main_scene="res://globals/scene_main.tscn"
 
 [autoload]
 

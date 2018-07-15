@@ -17,6 +17,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 script = ExtResource( 1 )
+_sections_unfolded = [ "Focus", "Mouse", "Size Flags", "Theme" ]
 events_path = ""
 
 

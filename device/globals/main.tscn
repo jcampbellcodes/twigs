@@ -4,7 +4,7 @@
 [ext_resource path="res://globals/bg_music.tscn" type="PackedScene" id=2]
 [ext_resource path="res://ui/dd_player.tscn" type="PackedScene" id=3]
 
-[node name="main" type="Node" index="0"]
+[node name="main" type="Node"]
 
 pause_mode = 2
 script = ExtResource( 1 )
@@ -22,10 +22,10 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 [node name="bg_music" parent="layers/telon" index="0" instance=ExtResource( 2 )]
 
 rect_clip_content = false
+interact_position = null
+dialog_color = null
 
 [node name="telon" parent="layers/telon" index="1" instance_placeholder="res://globals/telon.tscn"]
-
-mouse_default_cursor_shape = 0
 
 [node name="dialog" type="CanvasLayer" parent="layers" index="1"]
 
