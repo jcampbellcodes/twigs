@@ -289,6 +289,7 @@ func _process(time):
 		pose_scale = animations.directions[last_dir+1]
 
 	_update_terrain()
+	
 
 
 func teleport(obj):

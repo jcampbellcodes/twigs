@@ -423,10 +423,11 @@ placeholders = {
 
 [node name="sprite" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( 4.895, -216.523 )
+position = Vector2( -11.4, 137 )
 scale = Vector2( 1.09577, 1.01855 )
 frames = SubResource( 1 )
 animation = "default"
+offset = Vector2( 13.9582, -347.085 )
 
 [node name="animation" type="AnimationPlayer" parent="." index="1"]
 

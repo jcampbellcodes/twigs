@@ -1,24 +1,16 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
-[ext_resource path="res://assets/art/bg/livingroom1.png" type="Texture" id=2]
-[ext_resource path="res://globals/background.gd" type="Script" id=3]
-[ext_resource path="res://globals/terrain.gd" type="Script" id=4]
-[ext_resource path="res://demo/actors/player/player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://demo/rooms/room2/mountain_click_mask.png" type="BitMap" id=6]
-[ext_resource path="res://globals/item.gd" type="Script" id=7]
-[ext_resource path="res://demo/rooms/room2/background.png" type="Texture" id=8]
-[ext_resource path="res://demo/rooms/room2/sun_click_mask.png" type="BitMap" id=9]
-[ext_resource path="res://globals/game.tscn" type="PackedScene" id=10]
+[ext_resource path="res://globals/terrain.gd" type="Script" id=2]
+[ext_resource path="res://assets/art/maps/black.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/bg/livingroom1.png" type="Texture" id=4]
+[ext_resource path="res://globals/background.gd" type="Script" id=5]
+[ext_resource path="res://demo/actors/player/player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://demo/rooms/room2/mountain_click_mask.png" type="BitMap" id=7]
+[ext_resource path="res://globals/item.gd" type="Script" id=8]
+[ext_resource path="res://globals/game.tscn" type="PackedScene" id=9]
 
 [sub_resource type="NavigationPolygon" id=1]
-
-vertices = PoolVector2Array( 1252.52, 607.787, 1204.89, 557.953, 1491.17, 617.027, 1491.17, 657.925, 1156.57, 592.189, 766.377, 567.042, 1074.33, 654.579, 847.74, 611.076, 848.029, 649.017, 621.927, 596.206, 414.945, 555.219, 1112.47, 689.271, 705.031, 687.462, 619.837, 630.408, 350.588, 673.829, 159.734, 646.564, 158.201, 587.028 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 1, 0, 4 ), PoolIntArray( 5, 1, 4 ), PoolIntArray( 5, 4, 6, 7 ), PoolIntArray( 6, 8, 7 ), PoolIntArray( 5, 7, 9, 10 ), PoolIntArray( 0, 3, 11, 6 ), PoolIntArray( 6, 11, 12, 8 ), PoolIntArray( 13, 8, 12, 14 ), PoolIntArray( 13, 14, 15, 16, 10, 9 ) ]
-outlines = [ PoolVector2Array( 414.945, 555.219, 766.377, 567.042, 1204.89, 557.953, 1491.17, 617.027, 1491.17, 657.925, 1112.47, 689.271, 705.031, 687.462, 350.588, 673.829, 159.734, 646.564, 158.201, 587.028 ), PoolVector2Array( 621.927, 596.206, 619.837, 630.408, 848.029, 649.017, 847.74, 611.076 ), PoolVector2Array( 1156.57, 592.189, 1252.52, 607.787, 1074.33, 654.579 ) ]
-_sections_unfolded = [ "Resource" ]
-
-[sub_resource type="NavigationPolygon" id=2]
 
 vertices = PoolVector2Array( 2100, 890, 2330, 1080, 1100, 1090, 1180, 820, 1440, 830, 1550, 690, 1850, 690, 2110, 770, 2120, 820 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 0, 4, 5, 6, 7, 8 ) ]
@@ -32,61 +24,50 @@ __meta__ = {
 }
 events_path = ""
 
-[node name="background" type="Sprite" parent="." index="0"]
+[node name="terrain" type="Navigation2D" parent="." index="0"]
 
-texture = ExtResource( 2 )
-centered = false
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
-action = "walk"
-
-[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="." index="1"]
-
-position = Vector2( -291.38, -318.669 )
-scale = Vector2( 2.18869, 2.5645 )
-navpoly = SubResource( 1 )
-enabled = true
-_sections_unfolded = [ "Material", "Pause", "Transform" ]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="terrain" type="Navigation2D" parent="." index="2"]
-
-position = Vector2( -65.0709, 373.302 )
-script = ExtResource( 4 )
+position = Vector2( -39.9177, 454.192 )
+scale = Vector2( 1, 1.50177 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Z" ]
-__meta__ = {
-"_edit_lock_": true
-}
-scales = null
+scales = ExtResource( 3 )
 lightmap = null
-bitmaps_scale = Vector2( 2, 1 )
+bitmaps_scale = Vector2( 7.5, 0.8 )
 debug_mode = 1
 lightmap_modulate = Color( 1, 1, 1, 1 )
-scale_min = 0.5
+scale_min = 0.7
 scale_max = 1.0
 player_speed_multiplier = 1.0
 player_doubleclick_speed_multiplier = 1.5
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="terrain" index="0"]
 
-position = Vector2( -834.929, -383.302 )
-navpoly = SubResource( 2 )
+position = Vector2( -767.477, -305.2 )
+scale = Vector2( 1, 0.665865 )
+navpoly = SubResource( 1 )
 enabled = true
 
-[node name="player" parent="." index="3" instance=ExtResource( 5 )]
+[node name="background" type="Sprite" parent="." index="1"]
 
-position = Vector2( 970, 820 )
-z_index = 820
+texture = ExtResource( 4 )
+centered = false
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+action = "walk"
+
+[node name="player" parent="." index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 834.004, 744.545 )
+scale = Vector2( 0.701176, 0.701176 )
+z_index = 744
 _sections_unfolded = [ "Transform", "collision" ]
 placeholders = {
 
 }
 
-[node name="mountain" type="TextureButton" parent="." index="4"]
+[node name="mountain" type="TextureButton" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -107,8 +88,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_click_mask = ExtResource( 6 )
-script = ExtResource( 7 )
+texture_click_mask = ExtResource( 7 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -133,90 +114,10 @@ placeholders = {
 }
 use_custom_z = false
 
-[node name="sun_interact_pos" type="Position2D" parent="." index="5"]
+[node name="sun_interact_pos" type="Position2D" parent="." index="4"]
 
 position = Vector2( 1800, 1200 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="6"]
-
-layer = -1
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-scroll_offset = Vector2( 0, 0 )
-scroll_base_offset = Vector2( 0, 0 )
-scroll_base_scale = Vector2( 1, 1 )
-scroll_limit_begin = Vector2( 0, 0 )
-scroll_limit_end = Vector2( 0, 0 )
-scroll_ignore_camera_zoom = false
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
-
-visible = false
-position = Vector2( -250, -125 )
-motion_scale = Vector2( 0.8, 0.8 )
-motion_offset = Vector2( 0, 0 )
-motion_mirroring = Vector2( 0, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
-
-texture = ExtResource( 8 )
-centered = false
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="sun" type="TextureButton" parent="ParallaxBackground/ParallaxLayer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 1530.0
-margin_top = 340.0
-margin_right = 2529.0
-margin_bottom = 955.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_click_mask = ExtResource( 9 )
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
-animations = null
-speed = 300
-scale_on_map = false
-light_on_map = false
-tooltip = "Sun"
-action = ""
-events_path = ""
-global_id = "sun"
-use_combine = false
-inventory = false
-use_action_menu = true
-interact_angle = -1
-interact_position = NodePath("../../../sun_interact_pos")
-dialog_color = null
-talk_animation = "talk"
-active = true
-placeholders = {
-
-}
-use_custom_z = false
-
-[node name="game" parent="." index="7" instance=ExtResource( 10 )]
+[node name="game" parent="." index="5" instance=ExtResource( 9 )]
 
 
