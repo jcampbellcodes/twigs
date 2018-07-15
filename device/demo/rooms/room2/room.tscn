@@ -1,0 +1,389 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://globals/scene.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/bg/livingroom1.png" type="Texture" id=2]
+[ext_resource path="res://globals/background.gd" type="Script" id=3]
+[ext_resource path="res://globals/terrain.gd" type="Script" id=4]
+[ext_resource path="res://demo/actors/player/player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://globals/item.gd" type="Script" id=6]
+[ext_resource path="res://demo/rooms/room2/sign.png" type="Texture" id=7]
+[ext_resource path="res://demo/rooms/room2/mountain_click_mask.png" type="BitMap" id=8]
+[ext_resource path="res://demo/rooms/room2/background.png" type="Texture" id=9]
+[ext_resource path="res://demo/rooms/room2/sun_click_mask.png" type="BitMap" id=10]
+[ext_resource path="res://globals/game.tscn" type="PackedScene" id=11]
+
+[sub_resource type="NavigationPolygon" id=1]
+
+vertices = PoolVector2Array( 1252.52, 607.787, 1204.89, 557.953, 1491.17, 617.027, 1491.17, 657.925, 1156.57, 592.189, 766.377, 567.042, 1074.33, 654.579, 847.74, 611.076, 848.029, 649.017, 621.927, 596.206, 414.945, 555.219, 1112.47, 689.271, 705.031, 687.462, 619.837, 630.408, 350.588, 673.829, 159.734, 646.564, 158.201, 587.028 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 1, 0, 4 ), PoolIntArray( 5, 1, 4 ), PoolIntArray( 5, 4, 6, 7 ), PoolIntArray( 6, 8, 7 ), PoolIntArray( 5, 7, 9, 10 ), PoolIntArray( 0, 3, 11, 6 ), PoolIntArray( 6, 11, 12, 8 ), PoolIntArray( 13, 8, 12, 14 ), PoolIntArray( 13, 14, 15, 16, 10, 9 ) ]
+outlines = [ PoolVector2Array( 414.945, 555.219, 766.377, 567.042, 1204.89, 557.953, 1491.17, 617.027, 1491.17, 657.925, 1112.47, 689.271, 705.031, 687.462, 350.588, 673.829, 159.734, 646.564, 158.201, 587.028 ), PoolVector2Array( 621.927, 596.206, 619.837, 630.408, 848.029, 649.017, 847.74, 611.076 ), PoolVector2Array( 1156.57, 592.189, 1252.52, 607.787, 1074.33, 654.579 ) ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="NavigationPolygon" id=2]
+
+vertices = PoolVector2Array( 1615.07, 706.698, 1885.07, 716.698, 1985.07, 766.698, 2055.07, 986.698, 1775.07, 996.698 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ) ]
+outlines = [ PoolVector2Array( 1775.07, 996.698, 2055.07, 986.698, 1985.07, 766.698, 1885.07, 716.698, 1615.07, 706.698 ) ]
+
+[node name="scene" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+events_path = ""
+
+[node name="background" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+centered = false
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+action = "walk"
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="." index="1"]
+
+position = Vector2( -291.38, -318.669 )
+scale = Vector2( 2.18869, 2.5645 )
+navpoly = SubResource( 1 )
+enabled = true
+_sections_unfolded = [ "Material", "Pause", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="terrain" type="Navigation2D" parent="." index="2"]
+
+position = Vector2( -65.0709, 373.302 )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Z" ]
+__meta__ = {
+"_edit_lock_": true
+}
+scales = null
+lightmap = null
+bitmaps_scale = Vector2( 2, 1 )
+debug_mode = 1
+lightmap_modulate = Color( 1, 1, 1, 1 )
+scale_min = 0.5
+scale_max = 1.0
+player_speed_multiplier = 1.0
+player_doubleclick_speed_multiplier = 1.5
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="terrain" index="0"]
+
+navpoly = SubResource( 2 )
+enabled = true
+
+[node name="player" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 1735.14, 1210.67 )
+z_index = 1210
+_sections_unfolded = [ "Transform", "collision" ]
+placeholders = {
+
+}
+
+[node name="zoom_in" type="Area2D" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( 1229.91, 1191.31 )
+z_index = 50
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 6 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = "Zoom In"
+action = ""
+events_path = "res://demo/rooms/room2/zoom_in.esc"
+global_id = "zoom_in"
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+interact_position = null
+dialog_color = null
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="zoom_in" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -87.4153, -96.8391, -87.4153, 12.9872, -15.953, 13.7394, -13.6963, 100.246, 18.6498, 100.246, 20.1543, 15.2439, 90.1121, 17.5006, 93.1211, -98.3436 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="zoom_in" index="1"]
+
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="zoom_in" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -70.0
+margin_top = -61.0
+margin_right = -8.0
+margin_bottom = -43.0
+rect_scale = Vector2( 2.3, 2.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0.921875, 0.909252, 0.113995, 1 )
+text = "ZOOM IN"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="interact_pos" type="Position2D" parent="zoom_in" index="3"]
+
+position = Vector2( -104.491, 202.88 )
+
+[node name="zoom_out" type="Area2D" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 1443.48, 1219.74 )
+z_index = 50
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 6 )
+_sections_unfolded = [ "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = "Zoom Out"
+action = ""
+events_path = "res://demo/rooms/room2/zoom_out.esc"
+global_id = "zoom_out"
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+interact_position = null
+dialog_color = null
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="zoom_out" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -87.4153, -96.8391, -87.4153, 12.9872, -15.953, 13.7394, -13.6963, 100.246, 18.6498, 100.246, 20.1543, 15.2439, 90.1121, 17.5006, 93.1211, -98.3436 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="zoom_out" index="1"]
+
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="zoom_out" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -84.0
+margin_top = -60.0
+margin_right = -10.0
+margin_bottom = -42.0
+rect_scale = Vector2( 2.3, 2.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0.921875, 0.909252, 0.113995, 1 )
+text = "ZOOM OUT"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="interact_pos" type="Position2D" parent="zoom_out" index="3"]
+
+position = Vector2( 96.1008, 199.066 )
+
+[node name="mountain" type="TextureButton" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1218.0
+margin_top = 371.0
+margin_right = 2517.0
+margin_bottom = 1043.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_click_mask = ExtResource( 8 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = "Mountain"
+action = ""
+events_path = ""
+global_id = "mountain"
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+interact_position = null
+dialog_color = null
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+
+[node name="sun_interact_pos" type="Position2D" parent="." index="7"]
+
+position = Vector2( 1800, 1200 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="8"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+position = Vector2( -250, -125 )
+motion_scale = Vector2( 0.8, 0.8 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
+
+texture = ExtResource( 9 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="sun" type="TextureButton" parent="ParallaxBackground/ParallaxLayer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1530.0
+margin_top = 340.0
+margin_right = 2529.0
+margin_bottom = 955.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_click_mask = ExtResource( 10 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = "Sun"
+action = ""
+events_path = ""
+global_id = "sun"
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+interact_position = NodePath("../../../sun_interact_pos")
+dialog_color = null
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+
+[node name="game" parent="." index="9" instance=ExtResource( 11 )]
+
+

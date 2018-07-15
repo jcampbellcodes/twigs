@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://globals/scene.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/bg/livingroom1.png" type="Texture" id=2]
+[ext_resource path="res://demo/actors/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://globals/terrain.gd" type="Script" id=4]
+[ext_resource path="res://globals/game.tscn" type="PackedScene" id=5]
+
+[sub_resource type="NavigationPolygon" id=1]
+
+vertices = PoolVector2Array( -1252.17, 340, -1182.61, 90, -1071.3, 290, -1050.43, 340, -960, -40, -500.87, -40, -431.304, 0, -486.957, 60, -500.87, 230, -466.087, 330, -452.174, 300 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 2 ), PoolIntArray( 2, 7, 8, 3 ), PoolIntArray( 9, 3, 8, 10 ) ]
+outlines = [ PoolVector2Array( -1071.3, 290, -960, -40, -500.87, -40, -431.304, 0, -486.957, 60, -500.87, 230, -452.174, 300, -466.087, 330, -1050.43, 340, -1252.17, 340, -1182.61, 90 ) ]
+
+[node name="scene" type="Node2D"]
+
+script = ExtResource( 1 )
+events_path = ""
+
+[node name="bg" type="Sprite" parent="." index="0"]
+
+position = Vector2( -960, 540 )
+texture = ExtResource( 2 )
+
+[node name="player" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( -450, 750 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 750
+telekinetic = true
+
+[node name="terrain" type="Navigation2D" parent="." index="2"]
+
+position = Vector2( 120, 730 )
+scale = Vector2( 1.4375, 1 )
+script = ExtResource( 4 )
+scales = null
+lightmap = null
+bitmaps_scale = Vector2( 1, 1 )
+debug_mode = 1
+lightmap_modulate = Color( 1, 1, 1, 1 )
+scale_min = 0.3
+scale_max = 1.0
+player_speed_multiplier = 1.0
+player_doubleclick_speed_multiplier = 1.5
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="terrain" index="0"]
+
+position = Vector2( 528.696, -70 )
+navpoly = SubResource( 1 )
+enabled = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="game" parent="." index="3" instance=ExtResource( 5 )]
+
+
