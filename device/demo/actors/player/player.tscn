@@ -403,7 +403,7 @@ tracks/1/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 65.1157, 151.676 )
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -423,13 +423,13 @@ placeholders = {
 
 [node name="sprite" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( -11.4, 137 )
+position = Vector2( 4.3999, 231 )
 scale = Vector2( 1.09577, 1.01855 )
 frames = SubResource( 1 )
 animation = "default"
-offset = Vector2( 13.9582, -347.085 )
+offset = Vector2( -0.460793, -439.373 )
 
-[node name="animation" type="AnimationPlayer" parent="." index="1"]
+[node name="default" type="AnimationPlayer" parent="." index="1"]
 
 root_node = NodePath("..")
 autoplay = ""

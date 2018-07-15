@@ -25,7 +25,7 @@ vertices = PoolVector2Array( 1615.07, 706.698, 1885.07, 716.698, 1985.07, 766.69
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ) ]
 outlines = [ PoolVector2Array( 1775.07, 996.698, 2055.07, 986.698, 1985.07, 766.698, 1885.07, 716.698, 1615.07, 706.698 ) ]
 
-[node name="scene" type="Node2D" index="0"]
+[node name="scene" type="Node2D"]
 
 script = ExtResource( 1 )
 __meta__ = {
@@ -88,7 +88,6 @@ placeholders = {
 
 [node name="zoom_in" type="Area2D" parent="." index="4"]
 
-editor/display_folded = true
 position = Vector2( 1229.91, 1191.31 )
 z_index = 50
 input_pickable = true
