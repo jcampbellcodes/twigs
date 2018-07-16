@@ -6,7 +6,7 @@
 
 [node name="dialog_instance" type="Node2D"]
 
-z_index = 20
+z_index = 1000
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
 __meta__ = {
@@ -24,6 +24,8 @@ texture = ExtResource( 2 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="anchor" type="Node2D" parent="." index="1"]
+
+_sections_unfolded = [ "Z Index" ]
 
 [node name="text" type="RichTextLabel" parent="anchor" index="0"]
 
