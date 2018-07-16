@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/art/dialogue_boxes/liam_dialoguebox.png" type="Texture" id=2]
 [ext_resource path="res://demo/ui/dialog_theme.tres" type="Theme" id=3]
 
-[node name="dialog_instance" type="Node2D" index="0"]
+[node name="dialog_instance" type="Node2D"]
 
 z_index = 20
 script = ExtResource( 1 )

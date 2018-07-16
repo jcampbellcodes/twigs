@@ -14,7 +14,7 @@
 [ext_resource path="res://assets/art/buttons/user/inventoryselect.png" type="Texture" id=12]
 [ext_resource path="res://assets/art/buttons/user/inventory-hover.png" type="Texture" id=13]
 
-[node name="verb_menu" type="Control"]
+[node name="verb_menu" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -201,7 +201,7 @@ texture_focused = ExtResource( 3 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
-[node name="use" type="TextureButton" parent="actions" index="6"]
+[node name="pick_up" type="TextureButton" parent="actions" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0

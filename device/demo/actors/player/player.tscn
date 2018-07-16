@@ -405,6 +405,8 @@ extents = Vector2( 65.1157, 151.676 )
 
 [node name="player" type="KinematicBody2D"]
 
+position = Vector2( 9.79999, -10.3 )
+scale = Vector2( 1.30625, 1.32187 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -423,8 +425,8 @@ placeholders = {
 
 [node name="sprite" type="AnimatedSprite" parent="." index="0"]
 
-position = Vector2( 4.3999, 231 )
-scale = Vector2( 1.09577, 1.01855 )
+position = Vector2( 60.3991, 240.573 )
+scale = Vector2( 1.39538, 1.29705 )
 frames = SubResource( 1 )
 animation = "default"
 offset = Vector2( -0.460793, -439.373 )
@@ -462,7 +464,7 @@ blend_times = [  ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
-position = Vector2( 0.734314, -33.7823 )
+position = Vector2( 53.5573, -57.2338 )
 shape = SubResource( 14 )
 
 

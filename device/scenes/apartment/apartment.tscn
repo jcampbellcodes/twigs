@@ -1,20 +1,21 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://globals/scene.gd" type="Script" id=1]
 [ext_resource path="res://globals/terrain.gd" type="Script" id=2]
 [ext_resource path="res://assets/art/maps/black.png" type="Texture" id=3]
-[ext_resource path="res://assets/art/bg/livingroom1.png" type="Texture" id=4]
+[ext_resource path="res://assets/art/bg/livingroomkitch.png" type="Texture" id=4]
 [ext_resource path="res://globals/background.gd" type="Script" id=5]
 [ext_resource path="res://demo/actors/player/player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://globals/item.gd" type="Script" id=7]
-[ext_resource path="res://assets/art/bg/chairlivingroomw.png" type="Texture" id=8]
-[ext_resource path="res://globals/game.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/art/items/bagoweed.png" type="Texture" id=8]
+[ext_resource path="res://assets/art/items/bagoweedhigh.png" type="Texture" id=9]
+[ext_resource path="res://globals/game.tscn" type="PackedScene" id=10]
 
 [sub_resource type="NavigationPolygon" id=1]
 
-vertices = PoolVector2Array( 2195.78, 685.607, 2615.46, 895.611, 2071.55, 843.649, 1850, 690, 2095.86, 1082.51, 1018.79, 1077.4, 1061.84, 852.569, 1440, 830, 1550, 690 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 2 ), PoolIntArray( 3, 2, 7, 8 ) ]
-outlines = [ PoolVector2Array( 1018.79, 1077.4, 2095.86, 1082.51, 2071.55, 843.649, 2615.46, 895.611, 2195.78, 685.607, 1850, 690, 1550, 690, 1440, 830, 1061.84, 852.569 ) ]
+vertices = PoolVector2Array( 2095.86, 1082.51, 812.329, 1073.57, 818.069, 772.204, 1133.78, 588.513, 1725.98, 640.176, 2724.78, 692.796, 2727.65, 1079.31, 2574.58, 690.882, 2488.47, 630.609, 2137.36, 637.306, 1825.48, 542.59, 2071.35, 559.811 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 0, 7 ), PoolIntArray( 8, 7, 0, 9 ), PoolIntArray( 9, 0, 4, 10, 11 ) ]
+outlines = [ PoolVector2Array( 812.329, 1073.57, 2095.86, 1082.51, 2727.65, 1079.31, 2724.78, 692.796, 2574.58, 690.882, 2488.47, 630.609, 2137.36, 637.306, 2071.35, 559.811, 1825.48, 542.59, 1725.98, 640.176, 1133.78, 588.513, 818.069, 772.204 ) ]
 
 [node name="scene" type="Node2D"]
 
@@ -35,23 +36,25 @@ lightmap = null
 bitmaps_scale = Vector2( 7.5, 0.8 )
 debug_mode = 1
 lightmap_modulate = Color( 1, 1, 1, 1 )
-scale_min = 0.7
+scale_min = 0.69
 scale_max = 1.0
 player_speed_multiplier = 1.0
 player_doubleclick_speed_multiplier = 1.5
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="terrain" index="0"]
 
-position = Vector2( -767.477, -302.731 )
+position = Vector2( -767.477, -304.642 )
 scale = Vector2( 1, 0.665865 )
 navpoly = SubResource( 1 )
 enabled = true
 
 [node name="background" type="Sprite" parent="." index="1"]
 
+z_index = -1
 texture = ExtResource( 4 )
 centered = false
 script = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -59,29 +62,31 @@ action = "walk"
 
 [node name="player" parent="." index="2" instance=ExtResource( 6 )]
 
-position = Vector2( 834.004, 745.495 )
-scale = Vector2( 0.701176, 0.701176 )
-z_index = 745
+position = Vector2( 594.952, 795.597 )
+scale = Vector2( 0.700941, 0.700941 )
+z_index = 795
 _sections_unfolded = [ "Transform", "collision" ]
 placeholders = {
 
 }
 
-[node name="chair" type="Node2D" parent="." index="3"]
+[node name="weed" type="Node2D" parent="." index="3"]
 
-position = Vector2( 1609.41, 828.534 )
-scale = Vector2( 6.77839, 5.68271 )
+position = Vector2( 429.082, 307.211 )
+scale = Vector2( 1.58129, 1.48173 )
+z_index = -1
 script = ExtResource( 7 )
+_sections_unfolded = [ "Z Index" ]
 animations = null
 speed = 300
 scale_on_map = false
 light_on_map = false
 tooltip = ""
 action = ""
-events_path = "res://scenes/living_room/liam_intro.esc"
-global_id = "chair"
-use_combine = false
-inventory = false
+events_path = "res://scenes/apartment/weed.esc"
+global_id = "weed"
+use_combine = true
+inventory = true
 use_action_menu = true
 interact_angle = -1
 interact_position = null
@@ -91,54 +96,34 @@ active = true
 placeholders = {
 
 }
-use_custom_z = false
+use_custom_z = true
 
-[node name="chair_sprite" type="Sprite" parent="chair" index="0"]
-
-position = Vector2( -0.317017, 22.6608 )
-scale = Vector2( 0.147528, 0.175972 )
-texture = ExtResource( 8 )
-offset = Vector2( -14.4648, -147.211 )
-script = ExtResource( 7 )
-_sections_unfolded = [ "Offset", "Z Index" ]
-animations = null
-speed = 300
-scale_on_map = false
-light_on_map = false
-tooltip = ""
-action = ""
-events_path = "res://scenes/living_room/liam_intro.esc"
-global_id = "liam"
-use_combine = false
-inventory = false
-use_action_menu = true
-interact_angle = -1
-interact_position = null
-dialog_color = null
-talk_animation = "talk"
-active = true
-placeholders = {
-
-}
-use_custom_z = false
-
-[node name="area" type="Control" parent="chair" index="1"]
+[node name="area" type="TextureButton" parent="weed" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -42.0
-margin_top = -38.0
-margin_right = 45.0
-margin_bottom = 44.0
+margin_left = -37.0
+margin_top = -39.0
+margin_right = 39.0
+margin_bottom = 32.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
+expand = true
+_sections_unfolded = [ "Textures" ]
 
-[node name="game" parent="." index="4" instance=ExtResource( 9 )]
+[node name="game" parent="." index="4" instance=ExtResource( 10 )]
 
 

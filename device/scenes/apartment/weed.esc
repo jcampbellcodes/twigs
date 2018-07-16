@@ -1,0 +1,13 @@
+:talk
+
+say weed "What the fuck" liam avatar
+
+stop
+
+:pick_up
+
+> [!picked_item]
+	set_global i/inv_weed true
+	set_active weed false
+
+stop
