@@ -13,7 +13,7 @@ vertices = PoolVector2Array( 2095.86, 1082.51, 812.329, 1073.57, 818.069, 772.20
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 0, 7 ), PoolIntArray( 8, 7, 0, 9 ), PoolIntArray( 9, 0, 4, 10, 11 ) ]
 outlines = [ PoolVector2Array( 812.329, 1073.57, 2095.86, 1082.51, 2727.65, 1079.31, 2724.78, 692.796, 2574.58, 690.882, 2488.47, 630.609, 2137.36, 637.306, 2071.35, 559.811, 1825.48, 542.59, 1725.98, 640.176, 1133.78, 588.513, 818.069, 772.204 ) ]
 
-[node name="ROOT" type="Node2D" index="0"]
+[node name="ROOT" type="Node2D"]
 
 [node name="terrain" type="Navigation2D" parent="." index="0"]
 
