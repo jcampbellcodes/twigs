@@ -28,7 +28,7 @@ var target = Vector2()
 func _input(event):
 	if event is InputEventMouseButton:
 		target = get_global_mouse_position()
-		walk_to(target)
+		#walk_to(target)
 
 func set_active(p_active):
 	if p_active:

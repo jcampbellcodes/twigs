@@ -1,25 +1,26 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/scripts/terrain.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/maps/black.png" type="Texture" id=2]
 [ext_resource path="res://assets/art/bg/livingroomkitch.png" type="Texture" id=3]
-[ext_resource path="res://assets/art/items/bagoweed.png" type="Texture" id=4]
-[ext_resource path="res://assets/art/items/bagoweedhigh.png" type="Texture" id=5]
-[ext_resource path="res://assets/liam_player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/art/buttons/user/pickup.png" type="Texture" id=7]
-[ext_resource path="res://assets/art/buttons/user/pickupselect.png" type="Texture" id=8]
-[ext_resource path="res://assets/art/buttons/user/pickup-hover.png" type="Texture" id=9]
-[ext_resource path="res://assets/art/buttons/user/look.png" type="Texture" id=10]
-[ext_resource path="res://assets/art/buttons/user/lookselect.png" type="Texture" id=11]
-[ext_resource path="res://assets/art/buttons/user/look-hover.png" type="Texture" id=12]
-[ext_resource path="res://assets/art/buttons/user/talk.png" type="Texture" id=13]
-[ext_resource path="res://assets/art/buttons/user/talkselect.png" type="Texture" id=14]
-[ext_resource path="res://assets/art/buttons/user/talk-hover.png" type="Texture" id=15]
-[ext_resource path="res://assets/art/buttons/user/inventory.png" type="Texture" id=16]
-[ext_resource path="res://assets/art/buttons/user/inventoryselect.png" type="Texture" id=17]
-[ext_resource path="res://assets/art/buttons/user/inventory-hover.png" type="Texture" id=18]
-[ext_resource path="res://assets/scripts/backpack.gd" type="Script" id=19]
-[ext_resource path="res://assets/art/buttons/inventorypopup.png" type="Texture" id=20]
+[ext_resource path="res://globals/background.gd" type="Script" id=4]
+[ext_resource path="res://assets/art/items/bagoweed.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/items/bagoweedhigh.png" type="Texture" id=6]
+[ext_resource path="res://assets/liam_player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/art/buttons/user/pickup.png" type="Texture" id=8]
+[ext_resource path="res://assets/art/buttons/user/pickupselect.png" type="Texture" id=9]
+[ext_resource path="res://assets/art/buttons/user/pickup-hover.png" type="Texture" id=10]
+[ext_resource path="res://assets/art/buttons/user/look.png" type="Texture" id=11]
+[ext_resource path="res://assets/art/buttons/user/lookselect.png" type="Texture" id=12]
+[ext_resource path="res://assets/art/buttons/user/look-hover.png" type="Texture" id=13]
+[ext_resource path="res://assets/art/buttons/user/talk.png" type="Texture" id=14]
+[ext_resource path="res://assets/art/buttons/user/talkselect.png" type="Texture" id=15]
+[ext_resource path="res://assets/art/buttons/user/talk-hover.png" type="Texture" id=16]
+[ext_resource path="res://assets/art/buttons/user/inventory.png" type="Texture" id=17]
+[ext_resource path="res://assets/art/buttons/user/inventoryselect.png" type="Texture" id=18]
+[ext_resource path="res://assets/art/buttons/user/inventory-hover.png" type="Texture" id=19]
+[ext_resource path="res://assets/scripts/backpack.gd" type="Script" id=20]
+[ext_resource path="res://assets/art/buttons/inventorypopup.png" type="Texture" id=21]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -63,10 +64,13 @@ enabled = true
 z_index = -1
 texture = ExtResource( 3 )
 centered = false
+script = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
+action = "walk"
 
 [node name="weed" type="Node2D" parent="YSort" index="2"]
 
+editor/display_folded = true
 position = Vector2( 429.082, 307.211 )
 scale = Vector2( 1.58129, 1.48173 )
 _sections_unfolded = [ "Z Index" ]
@@ -91,13 +95,13 @@ toggle_mode = false
 enabled_focus_mode = 0
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 5 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
-[node name="player" parent="YSort" index="3" instance=ExtResource( 6 )]
+[node name="player" parent="YSort" index="3" instance=ExtResource( 7 )]
 
 position = Vector2( 940, 860 )
 scale = Vector2( 0.802172, 0.802172 )
@@ -146,10 +150,10 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 9 )
-texture_focused = ExtResource( 8 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+texture_focused = ExtResource( 9 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
@@ -174,10 +178,10 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 11 )
-texture_hover = ExtResource( 12 )
-texture_focused = ExtResource( 11 )
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 13 )
+texture_focused = ExtResource( 12 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
@@ -202,10 +206,10 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 13 )
-texture_pressed = ExtResource( 14 )
-texture_hover = ExtResource( 15 )
-texture_focused = ExtResource( 14 )
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 16 )
+texture_focused = ExtResource( 15 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
@@ -245,11 +249,11 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 16 )
-texture_pressed = ExtResource( 17 )
-texture_hover = ExtResource( 18 )
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 19 )
 expand = true
-script = ExtResource( 19 )
+script = ExtResource( 20 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="inventory" type="Sprite" parent="HUD/verb_menu/backpack" index="1"]
@@ -257,6 +261,7 @@ _sections_unfolded = [ "Textures" ]
 visible = false
 position = Vector2( 230, 620 )
 scale = Vector2( 0.445874, 0.445874 )
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
+_sections_unfolded = [ "Region" ]
 
 

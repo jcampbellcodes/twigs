@@ -2,12 +2,15 @@ extends Sprite
 
 export var action = "walk"
 var area
+var player
 
 func input(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		if (event.button_index == BUTTON_LEFT):
 			var pos = get_global_mouse_position()
 			get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "clicked", self, pos, event)
+			if (player != null):
+			    player.walk_to(pos)
 		elif (event.button_index == BUTTON_RIGHT):
 			emit_right_click()
 
@@ -40,6 +43,8 @@ func _enter_tree():
 func _ready():
 	area.connect("input_event", self, "input")
 	add_to_group("background")
+	if has_node("../player"):
+		player = get_node("../player")
 
 func emit_right_click():
 	emit_signal("right_click_on_bg")
