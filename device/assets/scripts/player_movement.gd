@@ -1,11 +1,7 @@
-tool
-
 extends KinematicBody2D
 
 var task
 var walk_destination
-var animation
-var vm  # A tool script cannot refer to singletons in Godot
 var terrain
 var walk_path
 var walk_context
@@ -27,24 +23,12 @@ var anim_scale_override = null
 var sprites = []
 export var placeholders = {}
 
-
-
 var target = Vector2()
 
 func _input(event):
 	if event is InputEventMouseButton:
 		target = get_global_mouse_position()
 		walk_to(target)
-
-# func _physics_process(delta):
-#     velocity = (target - position).normalized() * speed
-#     # rotation = velocity.angle()
-#     if (target - position).length() > 5:
-#         var collision_info = move_and_slide(velocity)
-
-
-
-
 
 func set_active(p_active):
 	if p_active:
