@@ -4,15 +4,15 @@
 [ext_resource path="res://globals/inventory.gd" type="Script" id=2]
 [ext_resource path="res://demo/ui/inventory_items.tscn" type="PackedScene" id=3]
 
-[node name="inventory" type="TextureRect"]
+[node name="inventory" type="TextureRect" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 1.0
-margin_right = 337.0
-margin_bottom = 455.0
+margin_right = 256.0
+margin_bottom = 468.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -21,7 +21,7 @@ size_flags_horizontal = 2
 size_flags_vertical = 2
 texture = ExtResource( 1 )
 expand = true
-stretch_mode = 0
+stretch_mode = 6
 script = ExtResource( 2 )
 _sections_unfolded = [ "Visibility" ]
 is_collapsible = false
@@ -43,28 +43,40 @@ size_flags_vertical = 2
 
 [node name="Position2D" type="Position2D" parent="slots" index="0"]
 
-position = Vector2( 77.7496, 71.2265 )
+position = Vector2( 40, 19 )
 
 [node name="Position2D1" type="Position2D" parent="slots" index="1"]
 
-position = Vector2( 169.136, 71.8394 )
+position = Vector2( 110, 19 )
 scale = Vector2( 0.999999, 1 )
 
 [node name="Position2D2" type="Position2D" parent="slots" index="2"]
 
-position = Vector2( 166.243, 229.018 )
+position = Vector2( 180, 19 )
 
 [node name="Position2D3" type="Position2D" parent="slots" index="3"]
 
-position = Vector2( 78.9396, 139.722 )
+position = Vector2( 40, 109 )
 
-[node name="Position2D4" type="Position2D" parent="slots" index="4"]
+[node name="Position2D6" type="Position2D" parent="slots" index="4"]
 
-position = Vector2( 168.023, 139.389 )
+position = Vector2( 40, 189 )
 
-[node name="Position2D5" type="Position2D" parent="slots" index="5"]
+[node name="Position2D4" type="Position2D" parent="slots" index="5"]
 
-position = Vector2( 81.5726, 222.632 )
+position = Vector2( 110, 189 )
+
+[node name="Position2D7" type="Position2D" parent="slots" index="6"]
+
+position = Vector2( 110, 109 )
+
+[node name="Position2D5" type="Position2D" parent="slots" index="7"]
+
+position = Vector2( 180, 189 )
+
+[node name="Position2D8" type="Position2D" parent="slots" index="8"]
+
+position = Vector2( 180, 109 )
 
 [node name="arrow_prev" type="TextureButton" parent="." index="1"]
 
@@ -113,6 +125,6 @@ group = null
 
 [node name="items" parent="." index="3" instance=ExtResource( 3 )]
 
-visible = false
+position = Vector2( 0, -1 )
 
 
