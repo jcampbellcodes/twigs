@@ -10,7 +10,7 @@ vertices = PoolVector2Array( 1290, 950, 1590, 1070, 210, 1060, 230, 880, 490, 85
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 8 ), PoolIntArray( 9, 10, 11, 12, 0 ), PoolIntArray( 8, 7, 0, 12 ), PoolIntArray( 4, 9, 0 ), PoolIntArray( 4, 3, 13 ) ]
 outlines = [ PoolVector2Array( 210, 1060, 230, 880, 350, 820, 490, 850, 600, 790, 630, 690, 930, 690, 1010, 730, 1170, 690, 1320, 690, 1510, 720, 1360, 800, 1290, 950, 1590, 1070 ) ]
 
-[node name="root" type="Node2D" index="0"]
+[node name="root" type="Node2D"]
 
 [node name="background" type="Sprite" parent="." index="0"]
 

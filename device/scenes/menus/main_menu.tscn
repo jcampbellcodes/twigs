@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://ui/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/scripts/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/menus/skyop.png" type="Texture" id=2]
 [ext_resource path="res://assets/art/menus/titleoverlay.png" type="Texture" id=3]
 [ext_resource path="res://assets/art/buttons/settingsbuttonhigh.png" type="Texture" id=4]
@@ -60,7 +60,7 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="sky" type="Sprite" parent="spinning_player" index="0"]
 
-position = Vector2( 896.743, -177.211 )
+position = Vector2( 896.743, -176.261 )
 rotation = 0.600254
 scale = Vector2( 3.27398, 3.04533 )
 z_index = -2
@@ -75,88 +75,7 @@ z_index = -1
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
-[node name="continueold" type="Button" parent="." index="1"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 443.0
-margin_top = 950.0
-margin_right = 788.0
-margin_bottom = 1039.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 2
-size_flags_vertical = 2
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "UI_CONTINUE"
-flat = false
-align = 1
-_sections_unfolded = [ "Visibility" ]
-
-[node name="new_gameold" type="Button" parent="." index="2"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 911.0
-margin_top = 945.0
-margin_right = 1286.0
-margin_bottom = 1034.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 2
-size_flags_vertical = 2
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "UI_NEW_GAME"
-flat = false
-align = 1
-_sections_unfolded = [ "Material", "Pause", "Visibility" ]
-
-[node name="eoldxit" type="Button" parent="." index="3"]
-
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 39.0
-margin_top = 950.0
-margin_right = 344.0
-margin_bottom = 1039.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 2
-size_flags_vertical = 2
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-text = "UI_QUIT"
-flat = false
-align = 1
-_sections_unfolded = [ "Visibility" ]
-
-[node name="settings" type="TextureButton" parent="." index="4"]
+[node name="settings" type="TextureButton" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -182,16 +101,16 @@ texture_pressed = ExtResource( 5 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
-[node name="continue" type="TextureButton" parent="." index="5"]
+[node name="continue" type="TextureButton" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 1268.0
-margin_top = 825.0
+margin_top = 827.0
 margin_right = 1698.0
-margin_bottom = 1026.0
+margin_bottom = 1028.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -199,16 +118,18 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+disabled = true
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
-[node name="new_game" type="TextureButton" parent="." index="6"]
+[node name="new_game" type="TextureButton" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -234,7 +155,7 @@ texture_pressed = ExtResource( 9 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
-[node name="exit" type="TextureButton" parent="." index="7"]
+[node name="exit" type="TextureButton" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0

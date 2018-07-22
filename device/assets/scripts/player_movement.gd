@@ -123,17 +123,17 @@ func _check_bounds():
 		return
 
 	printt("checking bouds for pos ", get_position(), terrain.is_solid(get_position()))
-	if terrain.is_solid(get_position()):
-		if has_node("terrain_icon"):
-			get_node("terrain_icon").hide()
-	else:
-		if !has_node("terrain_icon"):
-			var node = Sprite.new()
-			var tex = load("res://globals/terrain.png")
-			node.set_texture(tex)
-			add_child(node)
-			node.set_name("terrain_icon")
-		get_node("terrain_icon").show()
+	# if terrain.is_solid(get_position()):
+	# 	if has_node("terrain_icon"):
+	# 		get_node("terrain_icon").hide()
+	# else:
+	# 	if !has_node("terrain_icon"):
+	# 		var node = Sprite.new()
+	# 		var tex = load("res://globals/terrain.png")
+	# 		node.set_texture(tex)
+	# 		add_child(node)
+	# 		node.set_name("terrain_icon")
+	# 	get_node("terrain_icon").show()
 
 func _update_terrain():
 	if !terrain:

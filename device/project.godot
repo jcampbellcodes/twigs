@@ -10,14 +10,9 @@ config_version=3
 
 [application]
 
-config/name="twigs research"
-run/main_scene="res://globals/scene_main.tscn"
-
-[autoload]
-
-main="*res://globals/main.tscn"
-vm="*res://globals/global_vm.gd"
-esc_type="*res://globals/escoria_types.gd"
+config/name="Twigs"
+run/main_scene="res://scenes/menus/main_menu.tscn"
+config/icon="res://assets/art/items/bagoweed.png"
 
 [display]
 
@@ -102,4 +97,4 @@ use=[ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_na
 
 [locale]
 
-translations=PoolStringArray( "res://demo/translations/general.en.translation", "res://demo/translations/general.es.translation", "res://demo/translations/general.fr.translation" )
+translations=PoolStringArray(  )
