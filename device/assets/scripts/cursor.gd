@@ -1,8 +1,8 @@
 extends Node
 
 # Load the custom images for the mouse cursor
-var cursor_default = load("res://assets/art/buttons/cursor/cursordef.png")
-var cursor_hover = load("res://assets/art/buttons/cursor/highcursor.png")
+var cursor_default = load("res://assets/art/buttons/cursor/cursordef_small.png")
+var cursor_hover = load("res://assets/art/buttons/cursor/highcursor_small.png")
 
 func _ready():
     # Changes only the arrow shape of the cursor

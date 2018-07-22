@@ -309,6 +309,7 @@ func teleport(obj):
 	_update_terrain()
 
 func set_state(costume):
+	pass
 	var node = get_node(costume)
 	# You can `set_state player default` with no animation by that name, and get "animation"
 	animation = node if node else $"animation"
