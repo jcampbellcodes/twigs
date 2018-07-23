@@ -124,7 +124,7 @@ func _update_terrain():
 		return
 
 	var pos = get_position()
-	set_z_index(pos.y)
+	#set_z_index(pos.y)
 	var color = terrain.get_terrain(pos)
 	var scal = terrain.get_scale_range(color.b)
 	scal.x = scal.x * pose_scale
