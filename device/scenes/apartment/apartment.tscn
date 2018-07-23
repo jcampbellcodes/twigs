@@ -1,34 +1,22 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/scripts/terrain.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/maps/black.png" type="Texture" id=2]
 [ext_resource path="res://assets/art/bg/livingroomkitch.png" type="Texture" id=3]
-[ext_resource path="res://globals/background.gd" type="Script" id=4]
+[ext_resource path="res://assets/scripts/background.gd" type="Script" id=4]
 [ext_resource path="res://assets/scripts/item.gd" type="Script" id=5]
 [ext_resource path="res://assets/art/items/bagoweed.png" type="Texture" id=6]
 [ext_resource path="res://assets/art/items/bagoweedhigh.png" type="Texture" id=7]
 [ext_resource path="res://assets/liam_player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/art/bg/chairlivingroomw.png" type="Texture" id=9]
-[ext_resource path="res://assets/art/buttons/user/pickup.png" type="Texture" id=10]
-[ext_resource path="res://assets/art/buttons/user/pickupselect.png" type="Texture" id=11]
-[ext_resource path="res://assets/art/buttons/user/pickup-hover.png" type="Texture" id=12]
-[ext_resource path="res://assets/art/buttons/user/look.png" type="Texture" id=13]
-[ext_resource path="res://assets/art/buttons/user/lookselect.png" type="Texture" id=14]
-[ext_resource path="res://assets/art/buttons/user/look-hover.png" type="Texture" id=15]
-[ext_resource path="res://assets/art/buttons/user/talk.png" type="Texture" id=16]
-[ext_resource path="res://assets/art/buttons/user/talkselect.png" type="Texture" id=17]
-[ext_resource path="res://assets/art/buttons/user/talk-hover.png" type="Texture" id=18]
-[ext_resource path="res://assets/art/buttons/user/inventory.png" type="Texture" id=19]
-[ext_resource path="res://assets/art/buttons/user/inventoryselect.png" type="Texture" id=20]
-[ext_resource path="res://assets/art/buttons/user/inventory-hover.png" type="Texture" id=21]
-[ext_resource path="res://assets/scripts/backpack.gd" type="Script" id=22]
-[ext_resource path="res://assets/art/buttons/inventorypopup.png" type="Texture" id=23]
+[ext_resource path="res://scenes/hud.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/dialogs/dialog.tscn" type="PackedScene" id=11]
 
 [sub_resource type="NavigationPolygon" id=1]
 
-vertices = PoolVector2Array( 2574.58, 690.882, 2724.78, 692.796, 2727.65, 1079.31, 2342.91, 866.846, 2323.91, 796.261, 1987.28, 891.279, 1982.75, 853.272, 2061.48, 892.184, 2083.2, 926.572, 2095.86, 1082.51, 2286.8, 915.713, 2137.36, 637.306, 2488.47, 630.609, 2134.78, 696.717, 1942.93, 889.47, 812.329, 1073.57, 818.069, 772.204, 1133.78, 588.513, 1725.98, 640.176, 1913.07, 854.177, 1825.48, 542.59, 2071.35, 559.811, 1894.97, 727.485, 1859.68, 733.82, 1936.6, 856.892, 1859.68, 758.253, 1859.68, 786.306, 1964.65, 900.329, 2141.11, 929.287, 2256.94, 906.664, 1901.31, 825.219, 2302.19, 900.329, 2114.87, 933.812 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 8 ), PoolIntArray( 3, 2, 9, 10 ), PoolIntArray( 11, 12, 0, 4, 13 ), PoolIntArray( 14, 9, 15, 16, 17, 18, 19 ), PoolIntArray( 20, 21, 11, 13, 22, 18 ), PoolIntArray( 18, 22, 23 ), PoolIntArray( 19, 24, 14 ), PoolIntArray( 18, 23, 25 ), PoolIntArray( 18, 25, 26 ), PoolIntArray( 27, 5, 8, 9 ), PoolIntArray( 28, 29, 10, 9 ), PoolIntArray( 26, 30, 19 ), PoolIntArray( 10, 31, 3 ), PoolIntArray( 32, 28, 9 ), PoolIntArray( 8, 32, 9 ), PoolIntArray( 14, 27, 9 ), PoolIntArray( 19, 18, 26 ) ]
-outlines = [ PoolVector2Array( 812.329, 1073.57, 2095.86, 1082.51, 2727.65, 1079.31, 2724.78, 692.796, 2574.58, 690.882, 2488.47, 630.609, 2137.36, 637.306, 2071.35, 559.811, 1825.48, 542.59, 1725.98, 640.176, 1133.78, 588.513, 818.069, 772.204 ), PoolVector2Array( 1894.97, 727.485, 2134.78, 696.717, 2323.91, 796.261, 2342.91, 866.846, 2302.19, 900.329, 2286.8, 915.713, 2256.94, 906.664, 2141.11, 929.287, 2114.87, 933.812, 2083.2, 926.572, 2061.48, 892.184, 1982.75, 853.272, 1987.28, 891.279, 1964.65, 900.329, 1942.93, 889.47, 1936.6, 856.892, 1913.07, 854.177, 1901.31, 825.219, 1859.68, 786.306, 1859.68, 758.253, 1859.68, 733.82 ) ]
+vertices = PoolVector2Array( 2466.88, 756.443, 2574.58, 690.882, 2724.78, 692.796, 2727.65, 1079.31, 2389.06, 893.994, 2137.36, 637.306, 2488.47, 630.609, 2134.78, 696.717, 2095.86, 1082.51, 812.329, 1073.57, 818.069, 772.204, 1133.78, 588.513, 1813.53, 868.655, 1923.93, 945.575, 1825.48, 542.59, 2071.35, 559.811, 1894.97, 727.485, 1816.25, 715.72, 1725.98, 640.176, 2351.96, 940.146, 2274.14, 970.914, 2180.02, 979.963, 2120.3, 979.963, 1994.52, 952.815, 1970.08, 960.959, 1783.67, 807.119, 1889.54, 917.522 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 1, 0, 7 ), PoolIntArray( 8, 9, 10, 11, 12, 13 ), PoolIntArray( 14, 15, 5, 7, 16, 17, 18 ), PoolIntArray( 19, 4, 3 ), PoolIntArray( 19, 3, 8, 20 ), PoolIntArray( 21, 20, 8 ), PoolIntArray( 22, 21, 8 ), PoolIntArray( 23, 22, 8, 24 ), PoolIntArray( 18, 17, 25, 11 ), PoolIntArray( 11, 25, 12 ), PoolIntArray( 13, 24, 8 ), PoolIntArray( 13, 12, 26 ) ]
+outlines = [ PoolVector2Array( 812.329, 1073.57, 2095.86, 1082.51, 2727.65, 1079.31, 2724.78, 692.796, 2574.58, 690.882, 2488.47, 630.609, 2137.36, 637.306, 2071.35, 559.811, 1825.48, 542.59, 1725.98, 640.176, 1133.78, 588.513, 818.069, 772.204 ), PoolVector2Array( 1894.97, 727.485, 2134.78, 696.717, 2466.88, 756.443, 2389.06, 893.994, 2351.96, 940.146, 2274.14, 970.914, 2180.02, 979.963, 2120.3, 979.963, 1994.52, 952.815, 1970.08, 960.959, 1923.93, 945.575, 1889.54, 917.522, 1813.53, 868.655, 1783.67, 807.119, 1816.25, 715.72 ) ]
 
 [node name="apartment" type="Node2D" index="0"]
 
@@ -63,6 +51,7 @@ enabled = true
 
 [node name="background" type="Sprite" parent="YSort" index="1"]
 
+z_index = -1
 texture = ExtResource( 3 )
 centered = false
 script = ExtResource( 4 )
@@ -71,8 +60,10 @@ action = "walk"
 
 [node name="weed" type="Node2D" parent="YSort" index="2"]
 
+editor/display_folded = true
 position = Vector2( 429.082, 307.211 )
 scale = Vector2( 1.58129, 1.48173 )
+z_index = -1
 script = ExtResource( 5 )
 _sections_unfolded = [ "Z Index" ]
 animations = null
@@ -124,7 +115,7 @@ _sections_unfolded = [ "Textures" ]
 
 [node name="player" parent="YSort" index="3" instance=ExtResource( 8 )]
 
-position = Vector2( 1266.98, 974.787 )
+position = Vector2( 428.119, 744.937 )
 scale = Vector2( 0.802172, 0.802172 )
 speed = 500
 
@@ -135,161 +126,7 @@ texture = ExtResource( 9 )
 offset = Vector2( -6.35474, -126.601 )
 _sections_unfolded = [ "Z Index" ]
 
-[node name="HUD" type="Node2D" parent="." index="1"]
-
-editor/display_folded = true
-z_index = 1000
-_sections_unfolded = [ "Z Index" ]
-
-[node name="verb_menu" type="Control" parent="HUD" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Material", "Visibility" ]
-
-[node name="use" type="TextureButton" parent="HUD/verb_menu" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 20.0
-margin_right = 160.0
-margin_bottom = 170.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 11 )
-texture_hover = ExtResource( 12 )
-texture_focused = ExtResource( 11 )
-expand = true
-_sections_unfolded = [ "Textures" ]
-
-[node name="look" type="TextureButton" parent="HUD/verb_menu" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 120.0
-margin_top = 10.0
-margin_right = 280.0
-margin_bottom = 160.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 13 )
-texture_pressed = ExtResource( 14 )
-texture_hover = ExtResource( 15 )
-texture_focused = ExtResource( 14 )
-expand = true
-_sections_unfolded = [ "Textures" ]
-
-[node name="talk" type="TextureButton" parent="HUD/verb_menu" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 90.0
-margin_top = 140.0
-margin_right = 250.0
-margin_bottom = 290.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 16 )
-texture_pressed = ExtResource( 17 )
-texture_hover = ExtResource( 18 )
-texture_focused = ExtResource( 17 )
-expand = true
-_sections_unfolded = [ "Textures" ]
-
-[node name="backpack" type="Control" parent="HUD/verb_menu" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="backpack" type="TextureButton" parent="HUD/verb_menu/backpack" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 100.0
-margin_top = 820.0
-margin_right = 290.0
-margin_bottom = 1010.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 19 )
-texture_pressed = ExtResource( 20 )
-texture_hover = ExtResource( 21 )
-expand = true
-script = ExtResource( 22 )
-_sections_unfolded = [ "Textures" ]
-
-[node name="inventory" type="Sprite" parent="HUD/verb_menu/backpack" index="1"]
-
-visible = false
-position = Vector2( 230, 620 )
-scale = Vector2( 0.445874, 0.445874 )
-texture = ExtResource( 23 )
-_sections_unfolded = [ "Region" ]
+[node name="HUD" parent="." index="1" instance=ExtResource( 10 )]
 
 [node name="Camera2D" type="Camera2D" parent="." index="2"]
 
@@ -317,5 +154,9 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+
+[node name="dialog" parent="." index="3" instance=ExtResource( 11 )]
+
+position = Vector2( 981.838, 837.051 )
 
 

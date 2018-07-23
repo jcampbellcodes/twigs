@@ -187,8 +187,8 @@ func teleport_pos(x, y):
 	_update_terrain()
 
 func _update_terrain():
-	if self is Node2D && !use_custom_z:
-		set_z_index(get_position().y)
+	# if self is Node2D && !use_custom_z:
+	# 	set_z_index(get_position().y)
 	if !scale_on_map && !light_on_map:
 		return
 
