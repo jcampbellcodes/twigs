@@ -15,15 +15,13 @@
 [ext_resource path="res://assets/scripts/backpack.gd" type="Script" id=13]
 [ext_resource path="res://assets/art/buttons/inventorypopup.png" type="Texture" id=14]
 
-[node name="HUD" type="Node2D"]
+[node name="HUD" type="Node2D" index="0"]
 
-editor/display_folded = true
 z_index = 1000
 _sections_unfolded = [ "Z Index" ]
 
 [node name="verb_menu" type="Control" parent="." index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -44,10 +42,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -1.0
-margin_top = 20.0
-margin_right = 159.0
-margin_bottom = 170.0
+margin_left = 10.0
+margin_top = 47.0
+margin_right = 170.0
+margin_bottom = 197.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -72,10 +70,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 119.0
-margin_top = 10.0
-margin_right = 279.0
-margin_bottom = 160.0
+margin_left = 150.0
+margin_top = 12.0
+margin_right = 310.0
+margin_bottom = 162.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -100,10 +98,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 91.0
-margin_top = 142.0
-margin_right = 251.0
-margin_bottom = 292.0
+margin_left = 79.0
+margin_top = 173.0
+margin_right = 239.0
+margin_bottom = 323.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -143,10 +141,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 100.0
-margin_top = 820.0
-margin_right = 290.0
-margin_bottom = 1010.0
+margin_left = 40.0
+margin_top = 849.0
+margin_right = 230.0
+margin_bottom = 1039.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -168,8 +166,8 @@ _sections_unfolded = [ "Textures" ]
 [node name="inventory" type="Sprite" parent="verb_menu/backpack" index="1"]
 
 visible = false
-position = Vector2( 230, 620 )
-scale = Vector2( 0.445874, 0.445874 )
+position = Vector2( 245.74, 587.962 )
+scale = Vector2( 0.634732, 0.582705 )
 texture = ExtResource( 14 )
 _sections_unfolded = [ "Region" ]
 
