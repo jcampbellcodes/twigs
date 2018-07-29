@@ -89,6 +89,7 @@ func input(event):
 
 			if event.button_index == BUTTON_LEFT:
 				get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "clicked", self, event.get_global_position(), event)
+				self.emit_signal(twigs_model.current_action)
 			elif event.button_index == BUTTON_RIGHT:
 				get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "secondary_click", self, event.get_global_position(), event)
 			_check_focus(true, true)
@@ -268,11 +269,28 @@ func setup_ui_anim():
 
 	#vm.connect("global_changed", self, "global_changed")
 
+func _talk():
+	print("Talk to item!")
+
+func _look():
+	print("Look at item!")
+
+func _use():
+	print("Use item!")
+
+
 func _ready():
 	add_to_group("item")
 
 	if Engine.is_editor_hint():
 		return
+	
+	self.add_user_signal("use")
+	self.add_user_signal("look")
+	self.add_user_signal("talk")
+	self.connect("talk", self, "_talk")
+	self.connect("look", self, "_look")
+	self.connect("use", self, "_use")
 
 	var area
 	if has_node("area"):

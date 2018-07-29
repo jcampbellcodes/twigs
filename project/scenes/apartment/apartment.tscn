@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/art/maps/black.png" type="Texture" id=2]
 [ext_resource path="res://assets/art/bg/livingroomkitch.png" type="Texture" id=3]
 [ext_resource path="res://assets/scripts/background.gd" type="Script" id=4]
-[ext_resource path="res://assets/scripts/item.gd" type="Script" id=5]
+[ext_resource path="res://scenes/apartment/weed.gd" type="Script" id=5]
 [ext_resource path="res://assets/art/items/bagoweed.png" type="Texture" id=6]
 [ext_resource path="res://assets/art/items/bagoweedhigh.png" type="Texture" id=7]
 [ext_resource path="res://assets/liam_player.tscn" type="PackedScene" id=8]
@@ -58,9 +58,8 @@ script = ExtResource( 4 )
 _sections_unfolded = [ "Z Index" ]
 action = "walk"
 
-[node name="weed" type="Node2D" parent="YSort" index="2"]
+[node name="item" type="Node2D" parent="YSort" index="2"]
 
-editor/display_folded = true
 position = Vector2( 429.082, 307.211 )
 scale = Vector2( 1.58129, 1.48173 )
 z_index = -1
@@ -87,15 +86,15 @@ placeholders = {
 }
 use_custom_z = false
 
-[node name="area" type="TextureButton" parent="YSort/weed" index="0"]
+[node name="area" type="TextureButton" parent="YSort/item" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -37.0
+margin_left = -38.0
 margin_top = -39.0
-margin_right = 39.0
+margin_right = 38.0
 margin_bottom = 32.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -115,7 +114,7 @@ _sections_unfolded = [ "Textures" ]
 
 [node name="player" parent="YSort" index="3" instance=ExtResource( 8 )]
 
-position = Vector2( 428.119, 744.937 )
+position = Vector2( 760.175, 736.818 )
 scale = Vector2( 0.802172, 0.802172 )
 speed = 500
 
@@ -159,6 +158,13 @@ editor_draw_drag_margin = false
 
 [node name="dialog" parent="." index="3" instance=ExtResource( 11 )]
 
+visible = false
 position = Vector2( 981.838, 837.051 )
+
+[node name="Node2D" type="Node2D" parent="." index="4"]
+
+visible = false
+position = Vector2( 429.082, 307.211 )
+scale = Vector2( 1.58129, 1.48173 )
 
 

@@ -14,6 +14,10 @@ config/name="Twigs"
 run/main_scene="res://scenes/menus/main_menu.tscn"
 config/icon="res://assets/art/items/bagoweed.png"
 
+[autoload]
+
+twigs_model="*res://assets/scripts/twigs_model.gd"
+
 [display]
 
 window/size/width=1920
@@ -63,10 +67,6 @@ ui/tooltip_follows_mouse=false
 ui/right_mouse_button_action_menu=false
 ui/action_menu=""
 ui/inventory=""
-
-[gdnative]
-
-singletons=[  ]
 
 [input]
 

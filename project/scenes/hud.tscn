@@ -1,19 +1,22 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/art/buttons/user/pickup.png" type="Texture" id=1]
 [ext_resource path="res://assets/art/buttons/user/pickupselect.png" type="Texture" id=2]
 [ext_resource path="res://assets/art/buttons/user/pickup-hover.png" type="Texture" id=3]
-[ext_resource path="res://assets/art/buttons/user/look.png" type="Texture" id=4]
-[ext_resource path="res://assets/art/buttons/user/lookselect.png" type="Texture" id=5]
-[ext_resource path="res://assets/art/buttons/user/look-hover.png" type="Texture" id=6]
-[ext_resource path="res://assets/art/buttons/user/talk.png" type="Texture" id=7]
-[ext_resource path="res://assets/art/buttons/user/talkselect.png" type="Texture" id=8]
-[ext_resource path="res://assets/art/buttons/user/talk-hover.png" type="Texture" id=9]
-[ext_resource path="res://assets/art/buttons/user/inventory.png" type="Texture" id=10]
-[ext_resource path="res://assets/art/buttons/user/inventoryselect.png" type="Texture" id=11]
-[ext_resource path="res://assets/art/buttons/user/inventory-hover.png" type="Texture" id=12]
-[ext_resource path="res://assets/scripts/backpack.gd" type="Script" id=13]
-[ext_resource path="res://assets/art/buttons/inventorypopup.png" type="Texture" id=14]
+[ext_resource path="res://assets/scripts/actions/use.gd" type="Script" id=4]
+[ext_resource path="res://assets/art/buttons/user/look.png" type="Texture" id=5]
+[ext_resource path="res://assets/art/buttons/user/lookselect.png" type="Texture" id=6]
+[ext_resource path="res://assets/art/buttons/user/look-hover.png" type="Texture" id=7]
+[ext_resource path="res://assets/scripts/actions/look.gd" type="Script" id=8]
+[ext_resource path="res://assets/art/buttons/user/talk.png" type="Texture" id=9]
+[ext_resource path="res://assets/art/buttons/user/talkselect.png" type="Texture" id=10]
+[ext_resource path="res://assets/art/buttons/user/talk-hover.png" type="Texture" id=11]
+[ext_resource path="res://assets/scripts/actions/talk.gd" type="Script" id=12]
+[ext_resource path="res://assets/art/buttons/user/inventory.png" type="Texture" id=13]
+[ext_resource path="res://assets/art/buttons/user/inventoryselect.png" type="Texture" id=14]
+[ext_resource path="res://assets/art/buttons/user/inventory-hover.png" type="Texture" id=15]
+[ext_resource path="res://assets/scripts/backpack.gd" type="Script" id=16]
+[ext_resource path="res://assets/art/buttons/inventorypopup.png" type="Texture" id=17]
 
 [node name="HUD" type="Node2D" index="0"]
 
@@ -62,6 +65,7 @@ texture_pressed = ExtResource( 2 )
 texture_hover = ExtResource( 3 )
 texture_focused = ExtResource( 2 )
 expand = true
+script = ExtResource( 4 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="look" type="TextureButton" parent="verb_menu" index="1"]
@@ -85,11 +89,12 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 6 )
-texture_focused = ExtResource( 5 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+texture_focused = ExtResource( 6 )
 expand = true
+script = ExtResource( 8 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="talk" type="TextureButton" parent="verb_menu" index="2"]
@@ -113,11 +118,12 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
-texture_hover = ExtResource( 9 )
-texture_focused = ExtResource( 8 )
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 11 )
+texture_focused = ExtResource( 10 )
 expand = true
+script = ExtResource( 12 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="backpack" type="Control" parent="verb_menu" index="3"]
@@ -156,11 +162,11 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 11 )
-texture_hover = ExtResource( 12 )
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 15 )
 expand = true
-script = ExtResource( 13 )
+script = ExtResource( 16 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="inventory" type="Sprite" parent="verb_menu/backpack" index="1"]
@@ -168,7 +174,7 @@ _sections_unfolded = [ "Textures" ]
 visible = false
 position = Vector2( 245.74, 587.962 )
 scale = Vector2( 0.634732, 0.582705 )
-texture = ExtResource( 14 )
+texture = ExtResource( 17 )
 _sections_unfolded = [ "Region" ]
 
 
