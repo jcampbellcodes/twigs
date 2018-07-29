@@ -17,6 +17,7 @@ config/icon="res://assets/art/items/bagoweed.png"
 [autoload]
 
 twigs_model="*res://assets/scripts/twigs_model.gd"
+dialog_static="*res://scenes/dialog_holder.tscn"
 
 [display]
 
