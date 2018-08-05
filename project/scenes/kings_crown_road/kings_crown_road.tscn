@@ -12,11 +12,11 @@
 
 [sub_resource type="NavigationPolygon" id=1]
 
-vertices = PoolVector2Array( 1413.19, 890.807, 1207.24, 827.79, 1304.72, 813.561, 1563.14, 880.796, 1551.86, 776.97, 1448.88, 751.56, 1517.53, 682.445, 1606.78, 680.413, 1657.58, 701.757, 2523.94, 735.298, 2620.05, 717.003, 2743.14, 695.727, 2743.14, 1095.48, 2103.14, 1095.48, 2433.14, 754.949, 2073.14, 799.366, 803.135, 1095.48, 1883.14, 828.977, 1643.14, 865.991, 1742.71, 737.331, 803.135, 991.838 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 8 ), PoolIntArray( 9, 10, 11, 12, 13, 14 ), PoolIntArray( 15, 14, 13, 16, 17 ), PoolIntArray( 18, 4, 8, 19, 17 ), PoolIntArray( 18, 17, 16, 3 ), PoolIntArray( 0, 3, 16, 20 ) ]
-outlines = [ PoolVector2Array( 803.135, 1095.48, 2103.14, 1095.48, 2743.14, 1095.48, 2743.14, 695.727, 2620.05, 717.003, 2523.94, 735.298, 2433.14, 754.949, 2073.14, 799.366, 1883.14, 828.977, 1742.71, 737.331, 1657.58, 701.757, 1606.78, 680.413, 1517.53, 682.445, 1448.88, 751.56, 1551.86, 776.97, 1643.14, 865.991, 1563.14, 880.796, 1304.72, 813.561, 1207.24, 827.79, 1413.19, 890.807, 803.135, 991.838 ) ]
+vertices = PoolVector2Array( 1413.19, 890.807, 1207.24, 827.79, 1304.72, 813.561, 1563.14, 880.796, 1551.86, 776.97, 1448.88, 751.56, 1517.53, 682.445, 1606.78, 680.413, 1657.58, 701.757, 2523.94, 735.298, 2620.05, 717.003, 2743.14, 695.727, 2740, 740.275, 1613.14, 1095.48, 2433.14, 754.949, 2740, 1095.61, 2073.14, 799.366, 1883.14, 828.977, 1742.71, 737.331, 1643.14, 865.991, 803.135, 1095.48, 803.135, 991.838 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 8 ), PoolIntArray( 9, 10, 11, 12, 13, 14 ), PoolIntArray( 12, 15, 13 ), PoolIntArray( 16, 14, 13, 17 ), PoolIntArray( 18, 17, 13, 19 ), PoolIntArray( 13, 20, 21, 0, 3 ), PoolIntArray( 13, 3, 19 ), PoolIntArray( 8, 18, 19, 4 ) ]
+outlines = [ PoolVector2Array( 803.135, 1095.48, 1613.14, 1095.48, 2740, 1095.61, 2740, 740.275, 2743.14, 695.727, 2620.05, 717.003, 2523.94, 735.298, 2433.14, 754.949, 2073.14, 799.366, 1883.14, 828.977, 1742.71, 737.331, 1657.58, 701.757, 1606.78, 680.413, 1517.53, 682.445, 1448.88, 751.56, 1551.86, 776.97, 1643.14, 865.991, 1563.14, 880.796, 1304.72, 813.561, 1207.24, 827.79, 1413.19, 890.807, 803.135, 991.838 ) ]
 
-[node name="apartment" type="Node2D" index="0"]
+[node name="apartment" type="Node2D"]
 
 [node name="YSort" type="YSort" parent="." index="0"]
 
@@ -42,7 +42,7 @@ player_doubleclick_speed_multiplier = 1.5
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="YSort/terrain" index="0"]
 
-position = Vector2( -801.373, -341.416 )
+position = Vector2( -798.238, -341.534 )
 scale = Vector2( 1, 0.899504 )
 navpoly = SubResource( 1 )
 enabled = true
@@ -59,7 +59,7 @@ action = "walk"
 
 [node name="player" parent="YSort" index="2" instance=ExtResource( 5 )]
 
-position = Vector2( 500, 740 )
+position = Vector2( 1570, 910 )
 scale = Vector2( 0.802172, 0.802172 )
 speed = 500
 
@@ -94,11 +94,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 412.0
-margin_top = 645.0
-margin_right = 452.0
-margin_bottom = 685.0
-rect_rotation = -90.2888
+margin_left = 1780.0
+margin_top = 825.0
+margin_right = 1942.0
+margin_bottom = 987.0
+rect_rotation = -312.793
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2

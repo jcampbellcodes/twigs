@@ -18,7 +18,7 @@ vertices = PoolVector2Array( 2466.88, 756.443, 2574.58, 690.882, 2724.78, 692.79
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 1, 0, 7 ), PoolIntArray( 8, 9, 10, 11, 12, 13 ), PoolIntArray( 14, 15, 5, 7, 16, 17, 18 ), PoolIntArray( 19, 4, 3 ), PoolIntArray( 19, 3, 8, 20 ), PoolIntArray( 21, 20, 8 ), PoolIntArray( 22, 21, 8 ), PoolIntArray( 23, 22, 8, 24 ), PoolIntArray( 18, 17, 25, 11 ), PoolIntArray( 11, 25, 12 ), PoolIntArray( 13, 24, 8 ), PoolIntArray( 13, 12, 26 ) ]
 outlines = [ PoolVector2Array( 812.329, 1073.57, 2095.86, 1082.51, 2727.65, 1079.31, 2724.78, 692.796, 2574.58, 690.882, 2488.47, 630.609, 2137.36, 637.306, 2071.35, 559.811, 1825.48, 542.59, 1725.98, 640.176, 1133.78, 588.513, 818.069, 772.204 ), PoolVector2Array( 1894.97, 727.485, 2134.78, 696.717, 2466.88, 756.443, 2389.06, 893.994, 2351.96, 940.146, 2274.14, 970.914, 2180.02, 979.963, 2120.3, 979.963, 1994.52, 952.815, 1970.08, 960.959, 1923.93, 945.575, 1889.54, 917.522, 1813.53, 868.655, 1783.67, 807.119, 1816.25, 715.72 ) ]
 
-[node name="apartment" type="Node2D"]
+[node name="apartment" type="Node2D" index="0"]
 
 [node name="YSort" type="YSort" parent="." index="0"]
 
@@ -111,10 +111,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -17.0
+margin_left = -58.0
 margin_top = -20.0
 margin_right = 21.0
-margin_bottom = 15.0
+margin_bottom = 11.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
