@@ -29,7 +29,7 @@ placeholders = {
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 0, 90 )
+position = Vector2( 0, 40 )
 scale = Vector2( 1.31653, 1.31653 )
 texture = ExtResource( 2 )
 offset = Vector2( 10, -337.213 )

@@ -106,7 +106,7 @@ func _check_bounds():
 	if !terrain:
 		return
 
-	printt("checking bouds for pos ", get_position(), terrain.is_solid(get_position()))
+	#printt("checking bouds for pos ", get_position(), terrain.is_solid(get_position()))
 	# if terrain.is_solid(get_position()):
 	# 	if has_node("terrain_icon"):
 	# 		get_node("terrain_icon").hide()
