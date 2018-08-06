@@ -1,0 +1,125 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/scripts/terrain.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/maps/black.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/bg/megliamsbedroomday.png" type="Texture" id=3]
+[ext_resource path="res://assets/scripts/background.gd" type="Script" id=4]
+[ext_resource path="res://assets/liam_player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/apartment/scene_transition.gd" type="Script" id=6]
+[ext_resource path="res://assets/art/buttons/whitearrow.png" type="Texture" id=7]
+[ext_resource path="res://scenes/hud.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/dialog_holder.tscn" type="PackedScene" id=9]
+
+[sub_resource type="NavigationPolygon" id=1]
+
+vertices = PoolVector2Array( 2070.48, 789.846, 2460, 821.706, 2670, 991.969, 2740, 1095.61, 1613.14, 1095.48, 1040, 784.692, 790, 1095.61, 790, 932.747 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 5, 4, 6, 7 ) ]
+outlines = [ PoolVector2Array( 790, 1095.61, 1613.14, 1095.48, 2740, 1095.61, 2670, 991.969, 2460, 821.706, 2070.48, 789.846, 1040, 784.692, 790, 932.747 ) ]
+
+[node name="apartment" type="Node2D"]
+
+[node name="YSort" type="YSort" parent="." index="0"]
+
+z_as_relative = false
+sort_enabled = true
+_sections_unfolded = [ "Sort", "Z Index" ]
+
+[node name="terrain" type="Navigation2D" parent="YSort" index="0"]
+
+position = Vector2( 8.23804, 132.906 )
+scale = Vector2( 1, 1.50177 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z", "Z Index" ]
+scales = ExtResource( 2 )
+lightmap = null
+bitmaps_scale = Vector2( 4.59, 1 )
+debug_mode = 0
+lightmap_modulate = Color( 1, 1, 1, 1 )
+scale_min = 0.7
+scale_max = 0.8
+player_speed_multiplier = 1.0
+player_doubleclick_speed_multiplier = 1.5
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="YSort/terrain" index="0"]
+
+position = Vector2( -798.238, -341.534 )
+scale = Vector2( 1, 0.899504 )
+navpoly = SubResource( 1 )
+enabled = true
+
+[node name="background" type="Sprite" parent="YSort" index="1"]
+
+scale = Vector2( 1.17788, 1.18125 )
+z_index = -1
+texture = ExtResource( 3 )
+centered = false
+script = ExtResource( 4 )
+_sections_unfolded = [ "Z Index" ]
+action = "walk"
+
+[node name="player" parent="YSort" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 160, 860 )
+scale = Vector2( 0.802172, 0.802172 )
+speed = 500
+
+[node name="to_apartment" type="Node2D" parent="YSort" index="3"]
+
+z_index = 4096
+script = ExtResource( 6 )
+_sections_unfolded = [ "Z Index" ]
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+interact_position = null
+dialog_color = null
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+to_scene = "res://scenes/apartment/apartment.tscn"
+
+[node name="area" type="TextureButton" parent="YSort/to_apartment" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 211.0
+margin_top = 575.0
+margin_right = 373.0
+margin_bottom = 737.0
+rect_rotation = -180.128
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_hover = ExtResource( 7 )
+expand = true
+_sections_unfolded = [ "Textures" ]
+
+[node name="HUD" parent="." index="1" instance=ExtResource( 8 )]
+
+position = Vector2( -2.99677, -0.81189 )
+
+[node name="dialog" parent="." index="2" instance=ExtResource( 9 )]
+
+

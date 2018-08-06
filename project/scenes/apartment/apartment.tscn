@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/scripts/terrain.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/maps/black.png" type="Texture" id=2]
@@ -6,19 +6,20 @@
 [ext_resource path="res://assets/scripts/background.gd" type="Script" id=4]
 [ext_resource path="res://scenes/items/item.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/liam_player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/art/bg/chairlivingroomw.png" type="Texture" id=7]
-[ext_resource path="res://scenes/apartment/scene_transition.gd" type="Script" id=8]
-[ext_resource path="res://assets/art/buttons/whitearrow.png" type="Texture" id=9]
-[ext_resource path="res://scenes/hud.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/dialog_holder.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/apartment/scene_transition.gd" type="Script" id=7]
+[ext_resource path="res://assets/art/buttons/whitearrow.png" type="Texture" id=8]
+[ext_resource path="res://scenes/apartment/fridge.gd" type="Script" id=9]
+[ext_resource path="res://assets/art/items/fridge.png" type="Texture" id=10]
+[ext_resource path="res://scenes/hud.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/dialog_holder.tscn" type="PackedScene" id=12]
 
 [sub_resource type="NavigationPolygon" id=1]
 
-vertices = PoolVector2Array( 2466.88, 756.443, 2574.58, 690.882, 2724.78, 692.796, 2727.65, 1079.31, 2389.06, 893.994, 2137.36, 637.306, 2488.47, 630.609, 2134.78, 696.717, 2095.86, 1082.51, 812.329, 1073.57, 818.069, 772.204, 1133.78, 588.513, 1813.53, 868.655, 1923.93, 945.575, 1825.48, 542.59, 2071.35, 559.811, 1894.97, 727.485, 1816.25, 715.72, 1725.98, 640.176, 2351.96, 940.146, 2274.14, 970.914, 2180.02, 979.963, 2120.3, 979.963, 1994.52, 952.815, 1970.08, 960.959, 1783.67, 807.119, 1889.54, 917.522 )
-polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 1, 0, 7 ), PoolIntArray( 8, 9, 10, 11, 12, 13 ), PoolIntArray( 14, 15, 5, 7, 16, 17, 18 ), PoolIntArray( 19, 4, 3 ), PoolIntArray( 19, 3, 8, 20 ), PoolIntArray( 21, 20, 8 ), PoolIntArray( 22, 21, 8 ), PoolIntArray( 23, 22, 8, 24 ), PoolIntArray( 18, 17, 25, 11 ), PoolIntArray( 11, 25, 12 ), PoolIntArray( 13, 24, 8 ), PoolIntArray( 13, 12, 26 ) ]
-outlines = [ PoolVector2Array( 812.329, 1073.57, 2095.86, 1082.51, 2727.65, 1079.31, 2724.78, 692.796, 2574.58, 690.882, 2488.47, 630.609, 2137.36, 637.306, 2071.35, 559.811, 1825.48, 542.59, 1725.98, 640.176, 1133.78, 588.513, 818.069, 772.204 ), PoolVector2Array( 1894.97, 727.485, 2134.78, 696.717, 2466.88, 756.443, 2389.06, 893.994, 2351.96, 940.146, 2274.14, 970.914, 2180.02, 979.963, 2120.3, 979.963, 1994.52, 952.815, 1970.08, 960.959, 1923.93, 945.575, 1889.54, 917.522, 1813.53, 868.655, 1783.67, 807.119, 1816.25, 715.72 ) ]
+vertices = PoolVector2Array( 2095.86, 1082.51, 812.329, 1073.57, 818.069, 772.204, 1133.78, 588.513, 1880, 630.015, 2610, 690.017, 2760, 690.017, 2760, 1080.03, 2520, 630.015, 2170, 630.015, 2080, 630.015, 2010, 530.013, 1920, 530.013, 1950, 500.012 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 0 ), PoolIntArray( 8, 5, 0, 9 ), PoolIntArray( 10, 9, 0 ), PoolIntArray( 11, 10, 0, 4, 12, 13 ) ]
+outlines = [ PoolVector2Array( 812.329, 1073.57, 2095.86, 1082.51, 2760, 1080.03, 2760, 690.017, 2610, 690.017, 2520, 630.015, 2170, 630.015, 2080, 630.015, 2010, 530.013, 1950, 500.012, 1920, 530.013, 1880, 630.015, 1133.78, 588.513, 818.069, 772.204 ) ]
 
-[node name="apartment" type="Node2D" index="0"]
+[node name="apartment" type="Node2D"]
 
 [node name="YSort" type="YSort" parent="." index="0"]
 
@@ -37,8 +38,8 @@ lightmap = null
 bitmaps_scale = Vector2( 4.59, 1 )
 debug_mode = 0
 lightmap_modulate = Color( 1, 1, 1, 1 )
-scale_min = 0.7
-scale_max = 1.0
+scale_min = 0.6
+scale_max = 0.7
 player_speed_multiplier = 1.0
 player_doubleclick_speed_multiplier = 1.5
 
@@ -65,22 +66,74 @@ position = Vector2( 425.023, 307.211 )
 
 [node name="player" parent="YSort" index="3" instance=ExtResource( 6 )]
 
-position = Vector2( 760.175, 736.818 )
+position = Vector2( 910, 740 )
 scale = Vector2( 0.802172, 0.802172 )
 speed = 500
 
-[node name="chair" type="Sprite" parent="YSort" index="4"]
+[node name="to_hallway" type="Node2D" parent="YSort" index="4"]
 
-position = Vector2( 1340, 830 )
-texture = ExtResource( 7 )
-offset = Vector2( -6.35474, -126.601 )
+editor/display_folded = true
+position = Vector2( 1874.99, 906.472 )
+scale = Vector2( 2.6567, 6.67275 )
+z_index = 4094
+script = ExtResource( 7 )
 _sections_unfolded = [ "Z Index" ]
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+interact_position = NodePath("interact_pos")
+dialog_color = null
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+to_scene = "res://scenes/megliam_room/megliam_room.tscn"
+
+[node name="interact_pos" type="Position2D" parent="YSort/to_hallway" index="0"]
+
+[node name="area" type="TextureButton" parent="YSort/to_hallway" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -58.0
+margin_top = -20.0
+margin_right = 21.0
+margin_bottom = 11.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_hover = ExtResource( 8 )
+expand = true
+_sections_unfolded = [ "Textures" ]
 
 [node name="to_kings_crown" type="Node2D" parent="YSort" index="5"]
 
 position = Vector2( 1874.99, 906.472 )
 scale = Vector2( 2.6567, 6.67275 )
-script = ExtResource( 8 )
+z_index = 4096
+script = ExtResource( 7 )
+_sections_unfolded = [ "Z Index" ]
 animations = null
 speed = 300
 scale_on_map = false
@@ -105,16 +158,19 @@ to_scene = "res://scenes/kings_crown_road/kings_crown_road.tscn"
 
 [node name="interact_pos" type="Position2D" parent="YSort/to_kings_crown" index="0"]
 
+position = Vector2( -351.937, 20.0109 )
+scale = Vector2( 4.07587, 0.275205 )
+
 [node name="area" type="TextureButton" parent="YSort/to_kings_crown" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -58.0
-margin_top = -20.0
-margin_right = 21.0
-margin_bottom = 11.0
+margin_left = -317.0
+margin_right = -287.0
+margin_bottom = 76.0
+rect_rotation = 91.0349
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -126,14 +182,75 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_hover = ExtResource( 9 )
+texture_hover = ExtResource( 8 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
-[node name="HUD" parent="." index="1" instance=ExtResource( 10 )]
+[node name="fridge" type="Node2D" parent="YSort" index="6"]
+
+script = ExtResource( 9 )
+_sections_unfolded = [ "Z Index" ]
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+interact_position = null
+dialog_color = null
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+
+[node name="sprite" type="TextureRect" parent="YSort/fridge" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1160.0
+margin_right = 1466.0
+margin_bottom = 620.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 10 )
+expand = true
+stretch_mode = 0
+
+[node name="area" type="Control" parent="YSort/fridge" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1230.0
+margin_top = 10.0
+margin_right = 1380.0
+margin_bottom = 410.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="HUD" parent="." index="1" instance=ExtResource( 11 )]
 
 position = Vector2( -2.99677, -0.81189 )
 
-[node name="dialog" parent="." index="2" instance=ExtResource( 11 )]
+[node name="dialog" parent="." index="2" instance=ExtResource( 12 )]
 
 
