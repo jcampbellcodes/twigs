@@ -16,7 +16,7 @@ vertices = PoolVector2Array( 2070.48, 789.846, 2460, 821.706, 2670, 991.969, 274
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5 ), PoolIntArray( 5, 4, 6, 7 ) ]
 outlines = [ PoolVector2Array( 790, 1095.61, 1613.14, 1095.48, 2740, 1095.61, 2670, 991.969, 2460, 821.706, 2070.48, 789.846, 1040, 784.692, 790, 932.747 ) ]
 
-[node name="apartment" type="Node2D"]
+[node name="apartment" type="Node2D" index="0"]
 
 [node name="YSort" type="YSort" parent="." index="0"]
 
@@ -118,7 +118,7 @@ _sections_unfolded = [ "Textures" ]
 
 [node name="HUD" parent="." index="1" instance=ExtResource( 8 )]
 
-position = Vector2( -2.99677, -0.81189 )
+position = Vector2( 10, 10 )
 
 [node name="dialog" parent="." index="2" instance=ExtResource( 9 )]
 
