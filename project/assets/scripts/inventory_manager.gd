@@ -55,6 +55,7 @@ func add_item(item_name):
         var next_open_slot = _current_inventory.find(null)
         if(next_open_slot >= 0):
             _current_inventory[next_open_slot] = item_name
+            print(_current_inventory)
         # send update that item was added
     else:
         # trying to add an item that doesn't exist!
@@ -81,6 +82,7 @@ func get_queued_item():
 func set_queued_item(item_name):
     if(_inventory_state.has(item_name)):
         _queued_item = item_name
+        print("Queued item is:" + _queued_item)
         # TODO -> probably some GUI stuff here or some signals or something
     else:
         # trying to queue an item that doesn't exist!
@@ -89,4 +91,9 @@ func set_queued_item(item_name):
 func clear_queued_item():
     _queued_item = null
 
-    
+
+func show_backpack():
+    get_node("backpack").show()
+
+func hide_backpack():
+    get_node("backpack").hide()

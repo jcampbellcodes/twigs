@@ -7,6 +7,4 @@ func _look():
 	dialog_static.show_dialog("Well would you look at that! Weed!; Golly!", "liam", 20.0)
 
 func _use():
-	dialog_static.show_dialog("I can't use that.; Fuck u", "liam", 7.0)
-	inventory_manager.add_item(self.name)
-	self.hide()
+	inventory_manager.set_queued_item(self.name)

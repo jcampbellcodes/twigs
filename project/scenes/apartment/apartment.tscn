@@ -12,7 +12,7 @@
 [ext_resource path="res://assets/art/buttons/whitearrow.png" type="Texture" id=10]
 [ext_resource path="res://scenes/apartment/fridge.gd" type="Script" id=11]
 [ext_resource path="res://assets/art/items/fridge.png" type="Texture" id=12]
-[ext_resource path="res://scenes/hud.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/hud/hud.tscn" type="PackedScene" id=13]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -20,7 +20,7 @@ vertices = PoolVector2Array( 2095.86, 1082.51, 812.329, 1073.57, 818.069, 772.20
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 0 ), PoolIntArray( 8, 5, 0, 9 ), PoolIntArray( 10, 9, 0 ), PoolIntArray( 11, 10, 0, 4, 12, 13 ) ]
 outlines = [ PoolVector2Array( 812.329, 1073.57, 2095.86, 1082.51, 2760, 1080.03, 2760, 690.017, 2610, 690.017, 2520, 630.015, 2170, 630.015, 2080, 630.015, 2010, 530.013, 1950, 500.012, 1920, 530.013, 1880, 630.015, 1133.78, 588.513, 818.069, 772.204 ) ]
 
-[node name="apartment" type="Node2D" index="0"]
+[node name="apartment" type="Node2D"]
 
 [node name="YSort" type="YSort" parent="." index="0"]
 
