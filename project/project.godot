@@ -11,12 +11,12 @@ config_version=3
 [application]
 
 config/name="Twigs"
-run/main_scene="res://scenes/menus/main_menu.tscn"
+run/main_scene="res://scenes/gui/menus/main_menu.tscn"
 config/icon="res://assets/art/items/bagoweed.png"
 
 [autoload]
 
-twigs_model="*res://assets/scripts/twigs_model.gd"
+twigs_model="*res://assets/scripts/managers/twigs_model.gd"
 dialog_static="*res://scenes/managers/dialog_holder.tscn"
 inventory_manager="*res://scenes/managers/inventory_manager.tscn"
 

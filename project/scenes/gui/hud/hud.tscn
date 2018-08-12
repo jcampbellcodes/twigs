@@ -1,0 +1,319 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://scenes/gui/hud/hud.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/buttons/user/pickup.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/buttons/user/pickupselect.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/buttons/user/pickup-hover.png" type="Texture" id=4]
+[ext_resource path="res://assets/scripts/actions/use.gd" type="Script" id=5]
+[ext_resource path="res://assets/art/buttons/user/look.png" type="Texture" id=6]
+[ext_resource path="res://assets/art/buttons/user/lookselect.png" type="Texture" id=7]
+[ext_resource path="res://assets/art/buttons/user/look-hover.png" type="Texture" id=8]
+[ext_resource path="res://assets/scripts/actions/look.gd" type="Script" id=9]
+[ext_resource path="res://assets/art/buttons/user/talk.png" type="Texture" id=10]
+[ext_resource path="res://assets/art/buttons/user/talkselect.png" type="Texture" id=11]
+[ext_resource path="res://assets/art/buttons/user/talk-hover.png" type="Texture" id=12]
+[ext_resource path="res://assets/scripts/actions/talk.gd" type="Script" id=13]
+[ext_resource path="res://assets/art/buttons/hintnrm.png" type="Texture" id=14]
+[ext_resource path="res://assets/art/buttons/hinthigh2.png" type="Texture" id=15]
+[ext_resource path="res://assets/art/buttons/hinthigh.png" type="Texture" id=16]
+[ext_resource path="res://assets/scripts/actions/hint.gd" type="Script" id=17]
+[ext_resource path="res://scenes/managers/inventory.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/art/buttons/gearwithnooutline.png" type="Texture" id=19]
+[ext_resource path="res://assets/art/buttons/gearhigh.png" type="Texture" id=20]
+[ext_resource path="res://assets/art/buttons/gear.png" type="Texture" id=21]
+[ext_resource path="res://assets/scripts/gui/open_menu.gd" type="Script" id=22]
+[ext_resource path="res://assets/art/buttons/gearmenublank.png" type="Texture" id=23]
+[ext_resource path="res://assets/scripts/gui/game_menu.gd" type="Script" id=24]
+[ext_resource path="res://assets/art/buttons/mainmenu.png" type="Texture" id=25]
+[ext_resource path="res://assets/art/buttons/mainmenuunderline.png" type="Texture" id=26]
+[ext_resource path="res://assets/art/buttons/settingbutton2.png" type="Texture" id=27]
+[ext_resource path="res://assets/art/buttons/settingbutton2underline.png" type="Texture" id=28]
+[ext_resource path="res://assets/art/buttons/quitbutton2.png" type="Texture" id=29]
+[ext_resource path="res://assets/art/buttons/quitbutton2underline.png" type="Texture" id=30]
+
+
+[node name="HUD" type="Node2D"]
+
+z_index = 1000
+script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="verb_menu" type="Control" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="use" type="TextureButton" parent="verb_menu" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = 27.0
+margin_right = 164.0
+margin_bottom = 177.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+texture_focused = ExtResource( 3 )
+expand = true
+script = ExtResource( 5 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="look" type="TextureButton" parent="verb_menu" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 144.0
+margin_top = 49.0
+margin_right = 304.0
+margin_bottom = 199.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 8 )
+texture_focused = ExtResource( 7 )
+expand = true
+script = ExtResource( 9 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="talk" type="TextureButton" parent="verb_menu" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 46.0
+margin_top = 173.0
+margin_right = 206.0
+margin_bottom = 323.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 12 )
+texture_focused = ExtResource( 11 )
+expand = true
+script = ExtResource( 13 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="hint" type="TextureButton" parent="verb_menu" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1546.0
+margin_top = 19.0
+margin_right = 1706.0
+margin_bottom = 169.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+group = null
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 16 )
+expand = true
+script = ExtResource( 17 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="backpack" parent="verb_menu" index="4" instance=ExtResource( 18 )]
+
+visible = false
+
+[node name="gear" type="Control" parent="verb_menu" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="button" type="TextureButton" parent="verb_menu/gear" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1699.0
+margin_top = 31.0
+margin_right = 1859.0
+margin_bottom = 181.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+group = null
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 20 )
+texture_hover = ExtResource( 21 )
+expand = true
+script = ExtResource( 22 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="menu" type="TextureRect" parent="verb_menu/gear" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1368.0
+margin_top = 187.0
+margin_right = 1968.0
+margin_bottom = 787.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 23 )
+stretch_mode = 0
+script = ExtResource( 24 )
+
+[node name="main_menu" type="TextureButton" parent="verb_menu/gear/menu" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 109.0
+margin_top = 71.0
+margin_right = 507.0
+margin_bottom = 282.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+group = null
+texture_normal = ExtResource( 25 )
+texture_pressed = ExtResource( 25 )
+texture_hover = ExtResource( 26 )
+texture_focused = ExtResource( 25 )
+expand = true
+_sections_unfolded = [ "Textures" ]
+
+[node name="settings" type="TextureButton" parent="verb_menu/gear/menu" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 120.0
+margin_top = 211.0
+margin_right = 504.0
+margin_bottom = 434.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+group = null
+texture_normal = ExtResource( 27 )
+texture_pressed = ExtResource( 28 )
+texture_hover = ExtResource( 28 )
+texture_focused = ExtResource( 27 )
+expand = true
+_sections_unfolded = [ "Textures" ]
+
+[node name="quit" type="TextureButton" parent="verb_menu/gear/menu" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 124.0
+margin_top = 371.0
+margin_right = 504.0
+margin_bottom = 542.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+group = null
+texture_normal = ExtResource( 29 )
+texture_pressed = ExtResource( 30 )
+texture_hover = ExtResource( 30 )
+texture_focused = ExtResource( 30 )
+expand = true
+_sections_unfolded = [ "Textures" ]
+
+

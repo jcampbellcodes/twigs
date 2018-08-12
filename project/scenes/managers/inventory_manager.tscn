@@ -1,17 +1,20 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://assets/scripts/inventory_manager.gd" type="Script" id=1]
+[ext_resource path="res://assets/scripts/managers/inventory_manager.gd" type="Script" id=1]
 [ext_resource path="res://assets/art/buttons/user/inventory.png" type="Texture" id=2]
 [ext_resource path="res://assets/art/buttons/user/inventoryselect.png" type="Texture" id=3]
 [ext_resource path="res://assets/art/buttons/user/inventory-hover.png" type="Texture" id=4]
-[ext_resource path="res://assets/scripts/backpack.gd" type="Script" id=5]
+[ext_resource path="res://assets/scripts/gui/backpack.gd" type="Script" id=5]
 [ext_resource path="res://assets/art/buttons/inventorypopup.png" type="Texture" id=6]
-[ext_resource path="res://scenes/apartment/weed_inv.gd" type="Script" id=7]
+[ext_resource path="res://scenes/rooms/apartment/weed_inv.gd" type="Script" id=7]
 [ext_resource path="res://assets/art/items/bagoweed.png" type="Texture" id=8]
+
 
 [node name="inventory_manager" type="Node2D" index="0"]
 
+z_index = 4096
 script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="backpack" type="Control" parent="." index="0"]
 
@@ -102,12 +105,11 @@ position = Vector2( 148.504, 192.272 )
 
 [node name="items" type="Node2D" parent="backpack/inventory" index="9"]
 
-position = Vector2( -387.156, -1009.02 )
+position = Vector2( -1943.01, -874.69 )
 scale = Vector2( 1.57547, 1.71613 )
 
 [node name="weed" type="Node2D" parent="backpack/inventory/items" index="0"]
 
-visible = false
 script = ExtResource( 7 )
 animations = null
 speed = 300

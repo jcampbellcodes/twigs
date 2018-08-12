@@ -1,0 +1,120 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/scripts/managers/terrain.gd" type="Script" id=1]
+[ext_resource path="res://assets/art/maps/black.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/bg/kingscrownrd.png" type="Texture" id=3]
+[ext_resource path="res://assets/scripts/managers/background.gd" type="Script" id=4]
+[ext_resource path="res://scenes/entities/characters/liam_player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/rooms/apartment/scene_transition.gd" type="Script" id=6]
+[ext_resource path="res://assets/art/buttons/whitearrow.png" type="Texture" id=7]
+[ext_resource path="res://scenes/gui/hud/hud.tscn" type="PackedScene" id=8]
+
+[sub_resource type="NavigationPolygon" id=1]
+
+vertices = PoolVector2Array( 1413.19, 890.807, 1207.24, 827.79, 1304.72, 813.561, 1563.14, 880.796, 1551.86, 776.97, 1448.88, 751.56, 1517.53, 682.445, 1606.78, 680.413, 1657.58, 701.757, 2523.94, 735.298, 2620.05, 717.003, 2743.14, 695.727, 2740, 740.275, 1613.14, 1095.48, 2433.14, 754.949, 2740, 1095.61, 2073.14, 799.366, 1883.14, 828.977, 1742.71, 737.331, 1643.14, 865.991, 803.135, 1095.48, 803.135, 991.838 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7, 8 ), PoolIntArray( 9, 10, 11, 12, 13, 14 ), PoolIntArray( 12, 15, 13 ), PoolIntArray( 16, 14, 13, 17 ), PoolIntArray( 18, 17, 13, 19 ), PoolIntArray( 13, 20, 21, 0, 3 ), PoolIntArray( 13, 3, 19 ), PoolIntArray( 8, 18, 19, 4 ) ]
+outlines = [ PoolVector2Array( 803.135, 1095.48, 1613.14, 1095.48, 2740, 1095.61, 2740, 740.275, 2743.14, 695.727, 2620.05, 717.003, 2523.94, 735.298, 2433.14, 754.949, 2073.14, 799.366, 1883.14, 828.977, 1742.71, 737.331, 1657.58, 701.757, 1606.78, 680.413, 1517.53, 682.445, 1448.88, 751.56, 1551.86, 776.97, 1643.14, 865.991, 1563.14, 880.796, 1304.72, 813.561, 1207.24, 827.79, 1413.19, 890.807, 803.135, 991.838 ) ]
+
+[node name="apartment" type="Node2D"]
+
+[node name="YSort" type="YSort" parent="." index="0"]
+
+z_as_relative = false
+sort_enabled = true
+_sections_unfolded = [ "Sort", "Z Index" ]
+
+[node name="terrain" type="Navigation2D" parent="YSort" index="0"]
+
+position = Vector2( 8.23804, 132.906 )
+scale = Vector2( 1, 1.50177 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z", "Z Index" ]
+scales = ExtResource( 2 )
+lightmap = null
+bitmaps_scale = Vector2( 4.59, 1 )
+debug_mode = 0
+lightmap_modulate = Color( 1, 1, 1, 1 )
+scale_min = 0.25
+scale_max = 0.35
+player_speed_multiplier = 3.0
+player_doubleclick_speed_multiplier = 1.5
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="YSort/terrain" index="0"]
+
+position = Vector2( -798.238, -341.534 )
+scale = Vector2( 1, 0.899504 )
+navpoly = SubResource( 1 )
+enabled = true
+
+[node name="background" type="Sprite" parent="YSort" index="1"]
+
+scale = Vector2( 1.01562, 1.01852 )
+z_index = -1
+texture = ExtResource( 3 )
+centered = false
+script = ExtResource( 4 )
+_sections_unfolded = [ "Z Index" ]
+action = "walk"
+
+[node name="player" parent="YSort" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 1570, 910 )
+scale = Vector2( 0.802172, 0.802172 )
+speed = 500
+
+[node name="to_apartment" type="Node2D" parent="YSort" index="3"]
+
+script = ExtResource( 6 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+interact_position = null
+dialog_color = null
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+to_scene = "res://scenes/rooms/apartment/apartment.tscn"
+
+[node name="area" type="TextureButton" parent="YSort/to_apartment" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1780.0
+margin_top = 825.0
+margin_right = 1942.0
+margin_bottom = 987.0
+rect_rotation = -312.793
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_hover = ExtResource( 7 )
+expand = true
+_sections_unfolded = [ "Textures" ]
+
+[node name="HUD" parent="." index="1" instance=ExtResource( 8 )]
+
+position = Vector2( -2.99677, -0.81189 )
+
+
