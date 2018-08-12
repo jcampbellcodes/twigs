@@ -17,7 +17,17 @@ var _inventory_state = {
     "soggy_burrito_2": item_state.not_in_inventory
 }
 
-var _current_inventory = []
+var _current_inventory = [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+]
 
 var _queued_item = null
 
@@ -42,8 +52,10 @@ func get_all_items():
 func add_item(item_name):
     if(_inventory_state.has(item_name)):
         _inventory_state[item_name] = item_state.in_inventory
-        _current_inventory.append(item_name)
-        # TODO -> probably some GUI stuff here or some signals or something
+        var next_open_slot = _current_inventory.find(null)
+        if(next_open_slot >= 0):
+            _current_inventory[next_open_slot] = item_name
+        # send update that item was added
     else:
         # trying to add an item that doesn't exist!
         assert(false)

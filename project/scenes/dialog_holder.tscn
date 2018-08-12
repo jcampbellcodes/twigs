@@ -6,16 +6,9 @@
 
 script = ExtResource( 1 )
 
-[node name="bottom" type="Position2D" parent="." index="0"]
+[node name="dialog_pos" type="Position2D" parent="." index="0"]
 
-position = Vector2( 939.337, 836.229 )
-
-[node name="middle" type="Position2D" parent="." index="1"]
-
-position = Vector2( 931.218, 528.529 )
-
-[node name="top" type="Position2D" parent="." index="2"]
-
-position = Vector2( 924.723, 242.75 )
+position = Vector2( 940, 840 )
+_sections_unfolded = [ "Transform" ]
 
 

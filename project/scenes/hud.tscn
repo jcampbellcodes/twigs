@@ -190,10 +190,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 40.0
-margin_top = 849.0
-margin_right = 230.0
-margin_bottom = 1039.0
+margin_left = 39.0
+margin_top = 850.0
+margin_right = 229.0
+margin_bottom = 1040.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -218,6 +218,42 @@ position = Vector2( 245.74, 587.962 )
 scale = Vector2( 0.634732, 0.582705 )
 texture = ExtResource( 21 )
 _sections_unfolded = [ "Region" ]
+
+[node name="slot0" type="Position2D" parent="verb_menu/backpack/inventory" index="0"]
+
+position = Vector2( -119.326, -322.568 )
+
+[node name="slot1" type="Position2D" parent="verb_menu/backpack/inventory" index="1"]
+
+position = Vector2( 6.71149, -322.568 )
+
+[node name="slot2" type="Position2D" parent="verb_menu/backpack/inventory" index="2"]
+
+position = Vector2( 148.504, -322.568 )
+
+[node name="slot3" type="Position2D" parent="verb_menu/backpack/inventory" index="3"]
+
+position = Vector2( -119.326, -65.1479 )
+
+[node name="slot4" type="Position2D" parent="verb_menu/backpack/inventory" index="4"]
+
+position = Vector2( 6.71149, -65.1479 )
+
+[node name="slot5" type="Position2D" parent="verb_menu/backpack/inventory" index="5"]
+
+position = Vector2( 148.504, -65.1479 )
+
+[node name="slot6" type="Position2D" parent="verb_menu/backpack/inventory" index="6"]
+
+position = Vector2( -119.326, 192.272 )
+
+[node name="slot7" type="Position2D" parent="verb_menu/backpack/inventory" index="7"]
+
+position = Vector2( 6.71149, 192.272 )
+
+[node name="slot8" type="Position2D" parent="verb_menu/backpack/inventory" index="8"]
+
+position = Vector2( 148.504, 192.272 )
 
 [node name="gear" type="Control" parent="verb_menu" index="5"]
 
