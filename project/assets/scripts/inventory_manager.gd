@@ -55,6 +55,8 @@ func add_item(item_name):
         var next_open_slot = _current_inventory.find(null)
         if(next_open_slot >= 0):
             _current_inventory[next_open_slot] = item_name
+            get_node("backpack/inventory/items/"+item_name).add_to_group("active_inventory_items")
+            get_node("backpack/inventory/items/"+item_name).global_position = get_node("backpack/inventory/slot%d" % next_open_slot).global_position
             print(_current_inventory)
         # send update that item was added
     else:
@@ -67,6 +69,7 @@ func remove_item(item_name):
         var to_remove = _current_inventory.find(item_name)
         if(to_remove >= 0):
             _current_inventory.remove(to_remove)
+            get_node("backpack/inventory/items/"+item_name).remove_from_group("active_inventory_items")
         else:
             print("Trying to remove an item that's not there!")
             assert(false)
@@ -97,3 +100,4 @@ func show_backpack():
 
 func hide_backpack():
     get_node("backpack").hide()
+    get_node("backpack/inventory").hide()

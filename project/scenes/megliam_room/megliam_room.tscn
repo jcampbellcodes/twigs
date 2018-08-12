@@ -10,8 +10,9 @@
 [ext_resource path="res://assets/art/items/liamapmtbedroomcabinetbase.png" type="Texture" id=8]
 [ext_resource path="res://scenes/apartment/scene_transition.gd" type="Script" id=9]
 [ext_resource path="res://assets/art/buttons/whitearrow.png" type="Texture" id=10]
-[ext_resource path="res://scenes/hud.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/dialog_holder.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/hud/hud.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/managers/dialog_holder.tscn" type="PackedScene" id=12]
+
 
 [sub_resource type="NavigationPolygon" id=1]
 
