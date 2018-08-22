@@ -27,7 +27,8 @@ var _item_active_states = {
     "soggy_burrito_2": ITEM_STATE.ACTIVE,
     "to_kings_crown": ITEM_STATE.ACTIVE,
     "to_hallway":ITEM_STATE.ACTIVE,
-    "to_apartment": ITEM_STATE.ACTIVE
+    "to_apartment": ITEM_STATE.ACTIVE,
+    "fridge": ITEM_STATE.ACTIVE,
 }
 
 # dict of item ids to item state strings. used for anims, etc

@@ -20,7 +20,7 @@ vertices = PoolVector2Array( 2095.86, 1082.51, 812.329, 1073.57, 818.069, 772.20
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 0 ), PoolIntArray( 8, 5, 0, 9 ), PoolIntArray( 10, 9, 0 ), PoolIntArray( 11, 10, 0, 4, 12, 13 ) ]
 outlines = [ PoolVector2Array( 812.329, 1073.57, 2095.86, 1082.51, 2760, 1080.03, 2760, 690.017, 2610, 690.017, 2520, 630.015, 2170, 630.015, 2080, 630.015, 2010, 530.013, 1950, 500.012, 1920, 530.013, 1880, 630.015, 1133.78, 588.513, 818.069, 772.204 ) ]
 
-[node name="apartment" type="Node2D"]
+[node name="apartment" type="Node2D" index="0"]
 
 [node name="YSort" type="YSort" parent="." index="0"]
 
@@ -53,6 +53,7 @@ enabled = true
 
 [node name="background" type="Sprite" parent="YSort" index="1"]
 
+position = Vector2( 0, 1 )
 scale = Vector2( 1.02083, 1.03704 )
 z_index = -1
 texture = ExtResource( 3 )
@@ -239,6 +240,7 @@ _sections_unfolded = [ "Textures" ]
 
 [node name="fridge" type="Node2D" parent="YSort" index="6"]
 
+z_index = 4096
 script = ExtResource( 11 )
 _sections_unfolded = [ "Z Index" ]
 animations = null
@@ -288,9 +290,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 1230.0
-margin_top = 10.0
+margin_top = 11.0
 margin_right = 1380.0
-margin_bottom = 410.0
+margin_bottom = 411.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
