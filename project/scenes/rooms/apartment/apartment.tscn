@@ -234,7 +234,6 @@ _sections_unfolded = [ "Textures" ]
 
 [node name="fridge" type="Node2D" parent="YSort" index="5"]
 
-editor/display_folded = true
 script = ExtResource( 10 )
 _sections_unfolded = [ "Z Index" ]
 animations = null
@@ -296,8 +295,8 @@ size_flags_vertical = 1
 
 [node name="player" parent="YSort" index="6" instance=ExtResource( 12 )]
 
-position = Vector2( 1257, 744 )
-scale = Vector2( 0.802172, 0.802172 )
+position = Vector2( 1256.13, 743.135 )
+scale = Vector2( 0.829211, 0.829211 )
 z_index = 2
 speed = 500
 

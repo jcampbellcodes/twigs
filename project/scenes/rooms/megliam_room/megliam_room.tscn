@@ -14,11 +14,11 @@
 
 [sub_resource type="NavigationPolygon" id=1]
 
-vertices = PoolVector2Array( 2230, 1066, 2440, 1095.61, 1613.14, 1095.48, 2070.48, 789.846, 2460, 821.706, 2060, 895.733, 1510, 858.719, 950, 843.914, 790, 1095.61, 790, 932.747 )
-polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5, 6 ), PoolIntArray( 7, 6, 5, 0, 2, 8, 9 ) ]
-outlines = [ PoolVector2Array( 790, 1095.61, 1613.14, 1095.48, 2440, 1095.61, 2230, 1066, 2060, 895.733, 2460, 821.706, 2070.48, 789.846, 1510, 858.719, 950, 843.914, 790, 932.747 ) ]
+vertices = PoolVector2Array( 2230, 1066, 2440, 1095.61, 1613.14, 1095.48, 2070.48, 789.846, 2460, 821.706, 2121.4, 848.059, 2121.4, 1011.66, 862.4, 1093.83, 1021.4, 956.88, 2060, 895.733, 1053.4, 851.021, 1510, 858.719 )
+polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5 ), PoolIntArray( 6, 0, 2 ), PoolIntArray( 2, 7, 8 ), PoolIntArray( 9, 6, 2 ), PoolIntArray( 2, 8, 10, 11 ), PoolIntArray( 9, 2, 11, 3, 5 ) ]
+outlines = [ PoolVector2Array( 862.4, 1093.83, 1613.14, 1095.48, 2440, 1095.61, 2230, 1066, 2121.4, 1011.66, 2060, 895.733, 2121.4, 848.059, 2460, 821.706, 2070.48, 789.846, 1510, 858.719, 1053.4, 851.021, 1021.4, 956.88 ) ]
 
-[node name="apartment" type="Node2D"]
+[node name="apartment" type="Node2D" index="0"]
 
 [node name="YSort" type="YSort" parent="." index="0"]
 
@@ -35,7 +35,7 @@ _sections_unfolded = [ "Transform", "Z", "Z Index" ]
 scales = ExtResource( 2 )
 lightmap = null
 bitmaps_scale = Vector2( 4.59, 1.2 )
-debug_mode = 1
+debug_mode = 0
 lightmap_modulate = Color( 1, 1, 1, 1 )
 scale_min = 0.7
 scale_max = 0.8
@@ -51,6 +51,7 @@ enabled = true
 
 [node name="background" type="Sprite" parent="YSort" index="1"]
 
+position = Vector2( -1, 0 )
 scale = Vector2( 1.17788, 1.18125 )
 z_index = -1
 texture = ExtResource( 3 )
