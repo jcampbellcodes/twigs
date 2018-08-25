@@ -139,6 +139,4 @@ _sections_unfolded = [ "Textures" ]
 
 [node name="HUD" parent="." index="1" instance=ExtResource( 11 )]
 
-position = Vector2( 10, 10 )
-
 

@@ -1,7 +1,7 @@
 extends Node2D
 
-# global action selected. defaults to use
-var current_action = "use"
+# global action selected. defaults to look
+var current_action = "look"
 
 # dict of strings to bools showing where we at in the game
 var _global_flags = {

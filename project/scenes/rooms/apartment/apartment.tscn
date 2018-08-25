@@ -7,11 +7,11 @@
 [ext_resource path="res://scenes/rooms/apartment/weed.gd" type="Script" id=5]
 [ext_resource path="res://assets/art/items/bagoweed.png" type="Texture" id=6]
 [ext_resource path="res://assets/art/items/bagoweedhigh.png" type="Texture" id=7]
-[ext_resource path="res://scenes/entities/characters/liam_player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/rooms/apartment/scene_transition.gd" type="Script" id=9]
-[ext_resource path="res://assets/art/buttons/whitearrow.png" type="Texture" id=10]
-[ext_resource path="res://scenes/rooms/apartment/fridge.gd" type="Script" id=11]
-[ext_resource path="res://assets/art/items/fridge.png" type="Texture" id=12]
+[ext_resource path="res://scenes/rooms/apartment/scene_transition.gd" type="Script" id=8]
+[ext_resource path="res://assets/art/buttons/whitearrow.png" type="Texture" id=9]
+[ext_resource path="res://scenes/rooms/apartment/fridge.gd" type="Script" id=10]
+[ext_resource path="res://assets/art/items/fridge.png" type="Texture" id=11]
+[ext_resource path="res://scenes/entities/characters/liam_player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/gui/hud/hud.tscn" type="PackedScene" id=13]
 
 [sub_resource type="NavigationPolygon" id=1]
@@ -20,7 +20,7 @@ vertices = PoolVector2Array( 2095.86, 1082.51, 812.329, 1073.57, 818.069, 772.20
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 0 ), PoolIntArray( 8, 5, 0, 9 ), PoolIntArray( 10, 9, 0 ), PoolIntArray( 11, 10, 0, 4, 12, 13 ) ]
 outlines = [ PoolVector2Array( 812.329, 1073.57, 2095.86, 1082.51, 2760, 1080.03, 2760, 690.017, 2610, 690.017, 2520, 630.015, 2170, 630.015, 2080, 630.015, 2010, 530.013, 1950, 500.012, 1920, 530.013, 1880, 630.015, 1133.78, 588.513, 818.069, 772.204 ) ]
 
-[node name="apartment" type="Node2D" index="0"]
+[node name="apartment" type="Node2D"]
 
 [node name="YSort" type="YSort" parent="." index="0"]
 
@@ -116,19 +116,13 @@ texture_hover = ExtResource( 7 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
-[node name="player" parent="YSort" index="3" instance=ExtResource( 8 )]
-
-position = Vector2( 910, 740 )
-scale = Vector2( 0.802172, 0.802172 )
-speed = 500
-
-[node name="to_hallway" type="Node2D" parent="YSort" index="4"]
+[node name="to_hallway" type="Node2D" parent="YSort" index="3"]
 
 editor/display_folded = true
 position = Vector2( 1874.99, 906.472 )
 scale = Vector2( 2.6567, 6.67275 )
 z_index = 4094
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Z Index" ]
 animations = null
 speed = 300
@@ -175,16 +169,16 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_hover = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
-[node name="to_kings_crown" type="Node2D" parent="YSort" index="5"]
+[node name="to_kings_crown" type="Node2D" parent="YSort" index="4"]
 
 position = Vector2( 1874.99, 906.472 )
 scale = Vector2( 2.6567, 6.67275 )
 z_index = 4096
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 _sections_unfolded = [ "Z Index" ]
 animations = null
 speed = 300
@@ -234,14 +228,14 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_hover = ExtResource( 10 )
+texture_hover = ExtResource( 9 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
-[node name="fridge" type="Node2D" parent="YSort" index="6"]
+[node name="fridge" type="Node2D" parent="YSort" index="5"]
 
-z_index = 4096
-script = ExtResource( 11 )
+editor/display_folded = true
+script = ExtResource( 10 )
 _sections_unfolded = [ "Z Index" ]
 animations = null
 speed = 300
@@ -279,7 +273,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 expand = true
 stretch_mode = 0
 
@@ -300,8 +294,15 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
+[node name="player" parent="YSort" index="6" instance=ExtResource( 12 )]
+
+position = Vector2( 1257, 744 )
+scale = Vector2( 0.802172, 0.802172 )
+z_index = 2
+speed = 500
+
 [node name="HUD" parent="." index="1" instance=ExtResource( 13 )]
 
-position = Vector2( -2.99677, -0.81189 )
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 
