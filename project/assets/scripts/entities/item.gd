@@ -111,6 +111,9 @@ func _check_focus(focus, pressed):
 		else:
 			get_node("_pressed").hide()
 
+func _input():
+	pass
+
 func get_drag_data(point):
 	printt("get drag data on point ", point, inventory)
 	if !inventory:

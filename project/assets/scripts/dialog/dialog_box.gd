@@ -16,6 +16,9 @@ func start():
 	set_process_input(true)
 	set_physics_process(true)
 
+func end():
+	pass
+
 func _ready():
 	set_process_input(false)
 	set_physics_process(false)
@@ -33,7 +36,9 @@ func text_advance():
 		if(pages.size() - 1 >= current_page):
 			text = pages[current_page]
 		else:
+			self.emit_signal("dialog_end")
 			get_parent().queue_free()
+			
 
 func text_update():
 	if(text.length() > visible_characters):

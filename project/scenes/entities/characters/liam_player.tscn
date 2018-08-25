@@ -37,7 +37,8 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0, -80 )
+position = Vector2( 19.5, -80 )
+scale = Vector2( 2.82076, 1 )
 shape = SubResource( 1 )
 
 

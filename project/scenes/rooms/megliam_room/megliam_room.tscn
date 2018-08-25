@@ -1,16 +1,19 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://assets/scripts/managers/terrain.gd" type="Script" id=1]
-[ext_resource path="res://assets/art/maps/black.png" type="Texture" id=2]
-[ext_resource path="res://assets/art/bg/megliamsbedroomday.png" type="Texture" id=3]
-[ext_resource path="res://assets/scripts/managers/background.gd" type="Script" id=4]
-[ext_resource path="res://assets/art/items/endofbed1.png" type="Texture" id=5]
-[ext_resource path="res://scenes/entities/characters/liam_player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/art/items/megcomputer1.png" type="Texture" id=7]
+[ext_resource path="res://assets/art/bg/megliamsbedroomday.png" type="Texture" id=1]
+[ext_resource path="res://assets/scripts/managers/background.gd" type="Script" id=2]
+[ext_resource path="res://assets/scripts/managers/terrain.gd" type="Script" id=3]
+[ext_resource path="res://assets/art/maps/black.png" type="Texture" id=4]
+[ext_resource path="res://scenes/rooms/megliam_room/item_megroom_bedend.gd" type="Script" id=5]
+[ext_resource path="res://assets/art/items/endofbed1.png" type="Texture" id=6]
+[ext_resource path="res://scenes/rooms/megliam_room/item_megroom_dresser.gd" type="Script" id=7]
 [ext_resource path="res://assets/art/items/liamapmtbedroomcabinetbase.png" type="Texture" id=8]
-[ext_resource path="res://scenes/rooms/apartment/scene_transition.gd" type="Script" id=9]
-[ext_resource path="res://assets/art/buttons/whitearrow.png" type="Texture" id=10]
-[ext_resource path="res://scenes/gui/hud/hud.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/entities/characters/liam_player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/rooms/megliam_room/item_megroom_computer.gd" type="Script" id=10]
+[ext_resource path="res://assets/art/items/megcomputer1.png" type="Texture" id=11]
+[ext_resource path="res://scenes/rooms/apartment/scene_transition.gd" type="Script" id=12]
+[ext_resource path="res://assets/art/buttons/whitearrow.png" type="Texture" id=13]
+[ext_resource path="res://scenes/gui/hud/hud.tscn" type="PackedScene" id=14]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -18,7 +21,7 @@ vertices = PoolVector2Array( 2230, 1066, 2440, 1095.61, 1613.14, 1095.48, 2070.4
 polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5 ), PoolIntArray( 6, 0, 2 ), PoolIntArray( 2, 7, 8 ), PoolIntArray( 9, 6, 2 ), PoolIntArray( 2, 8, 10, 11 ), PoolIntArray( 9, 2, 11, 3, 5 ) ]
 outlines = [ PoolVector2Array( 862.4, 1093.83, 1613.14, 1095.48, 2440, 1095.61, 2230, 1066, 2121.4, 1011.66, 2060, 895.733, 2121.4, 848.059, 2460, 821.706, 2070.48, 789.846, 1510, 858.719, 1053.4, 851.021, 1021.4, 956.88 ) ]
 
-[node name="apartment" type="Node2D" index="0"]
+[node name="apartment" type="Node2D"]
 
 [node name="YSort" type="YSort" parent="." index="0"]
 
@@ -26,13 +29,24 @@ z_as_relative = false
 sort_enabled = true
 _sections_unfolded = [ "Sort", "Z Index" ]
 
-[node name="terrain" type="Navigation2D" parent="YSort" index="0"]
+[node name="background" type="Sprite" parent="YSort" index="0"]
+
+position = Vector2( -2, 1 )
+scale = Vector2( 1.17788, 1.18125 )
+z_as_relative = false
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 2 )
+_sections_unfolded = [ "Z Index" ]
+action = "walk"
+
+[node name="terrain" type="Navigation2D" parent="YSort" index="1"]
 
 position = Vector2( 8.23804, 132.906 )
 scale = Vector2( 1, 1.50177 )
-script = ExtResource( 1 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Z", "Z Index" ]
-scales = ExtResource( 2 )
+scales = ExtResource( 4 )
 lightmap = null
 bitmaps_scale = Vector2( 4.59, 1.2 )
 debug_mode = 0
@@ -49,46 +63,163 @@ scale = Vector2( 1, 0.899504 )
 navpoly = SubResource( 1 )
 enabled = true
 
-[node name="background" type="Sprite" parent="YSort" index="1"]
+[node name="item_megroom_bedend" type="Node2D" parent="YSort" index="2"]
 
-position = Vector2( -1, 0 )
-scale = Vector2( 1.17788, 1.18125 )
-z_index = -1
-texture = ExtResource( 3 )
-centered = false
-script = ExtResource( 4 )
-_sections_unfolded = [ "Z Index" ]
-action = "walk"
-
-[node name="bed" type="Sprite" parent="YSort" index="2"]
-
-position = Vector2( 620, 1000 )
+position = Vector2( 524, 1044 )
 z_index = 2
-texture = ExtResource( 5 )
+script = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+interact_position = null
+dialog_color = null
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+
+[node name="bed" type="Sprite" parent="YSort/item_megroom_bedend" index="0"]
+
+position = Vector2( 96, -44 )
+z_index = 2
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Z Index" ]
 
-[node name="player" parent="YSort" index="3" instance=ExtResource( 6 )]
+[node name="area" type="Area2D" parent="YSort/item_megroom_bedend" index="1"]
 
-position = Vector2( 1020, 930 )
+z_index = 100
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Z Index" ]
+
+[node name="hitbox" type="CollisionPolygon2D" parent="YSort/item_megroom_bedend/area" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 73.6, -45.8, -140.4, -44.8, -224.4, -55.8, -284.4, -34.8, -361.4, -47.8, -420.4, -22.8, -485.4, 30.2, -502.4, 50.2, 527.6, 57.2, 491.6, 7.19995, 437.6, -17.8, 333.6, -22.8, 290.6, -39.8, 170.6, -50.8, 111.6, -45.8 )
+
+[node name="item_megroom_dresser" type="Node2D" parent="YSort" index="3"]
+
+position = Vector2( 458, 551 )
+script = ExtResource( 7 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+interact_position = null
+dialog_color = null
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+
+[node name="drawers" type="Sprite" parent="YSort/item_megroom_dresser" index="0"]
+
+position = Vector2( 42, -11 )
+texture = ExtResource( 8 )
+
+[node name="area" type="Area2D" parent="YSort/item_megroom_dresser" index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="hitbox" type="CollisionPolygon2D" parent="YSort/item_megroom_dresser/area" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 323, -217, 322, -188, 305, -177, 295, -139, 319, -3, 307, 35, 326, 114, 351, 125, 360, 147, 305, 193, -260, 173, -241, 150, -236, 111, -233, 76, -245, 37, -227, -50, -260, -147, -288, -173, -287, -190, -218, -218, 186, -236 )
+
+[node name="player" parent="YSort" index="4" instance=ExtResource( 9 )]
+
+position = Vector2( 1155, 789 )
 scale = Vector2( 0.802172, 0.802172 )
 speed = 500
 
-[node name="computer" type="Sprite" parent="YSort" index="4"]
+[node name="item_megroom_computer" type="Node2D" parent="YSort" index="5"]
 
-position = Vector2( 1610, 850 )
+position = Vector2( 1673, 846 )
+script = ExtResource( 10 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+interact_position = null
+dialog_color = null
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+
+[node name="computer" type="Sprite" parent="YSort/item_megroom_computer" index="0"]
+
+position = Vector2( -71.9998, -16 )
 scale = Vector2( 1.24698, 1.24698 )
-texture = ExtResource( 7 )
+texture = ExtResource( 11 )
 offset = Vector2( 16.0388, -112.271 )
 
-[node name="drawers" type="Sprite" parent="YSort" index="5"]
+[node name="area" type="Area2D" parent="YSort/item_megroom_computer" index="1"]
 
-position = Vector2( 500, 540 )
-texture = ExtResource( 8 )
+position = Vector2( 43, -159 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="hitbox" type="CollisionPolygon2D" parent="YSort/item_megroom_computer/area" index="0"]
+
+position = Vector2( -0.415894, 0 )
+build_mode = 0
+polygon = PoolVector2Array( 35.8002, -314.6, 125.8, -217.6, 122.8, -184.6, 144.8, -178.6, 163.8, -84.6, 236.8, -10.6, 236.8, 299.4, 184.383, 319.254, 163.59, 308.858, 181.472, 290.976, 189.373, 192.837, 176.897, 181.193, 41.7477, 188.263, 45.4904, 208.223, 42.5795, 222.362, 27.609, 232.342, 68.3618, 241.491, 86.2432, 251.471, 99.0001, 270, 91.0001, 293, 64.0001, 310, 27.0001, 288, 38.0001, 264, -56.9999, 236, -121, 301, -110, 330, -164, 347, -165, 304, -93.9999, 231, -190, 245, -218.2, 196.4, -324.2, -130.6, -314, -184, -284, -201, -243, -177, -186, -65, -94.9999, -66, -122, -171, 12.0001, -168, 10.2267, -279.563, 14.8009, -318.237 )
 
 [node name="to_apartment" type="Node2D" parent="YSort" index="6"]
 
 z_index = 4096
-script = ExtResource( 9 )
+script = ExtResource( 12 )
 _sections_unfolded = [ "Z Index" ]
 animations = null
 speed = 300
@@ -134,10 +265,10 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_hover = ExtResource( 10 )
+texture_hover = ExtResource( 13 )
 expand = true
 _sections_unfolded = [ "Textures" ]
 
-[node name="HUD" parent="." index="1" instance=ExtResource( 11 )]
+[node name="HUD" parent="." index="1" instance=ExtResource( 14 )]
 
 

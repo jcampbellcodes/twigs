@@ -23,7 +23,12 @@ var anim_scale_override = null
 var sprites = []
 export var placeholders = {}
 
+var _can_move = true
+
 var target = Vector2()
+
+func set_can_move(can_move):
+	_can_move = can_move
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -37,6 +42,9 @@ func set_active(p_active):
 		hide()
 
 func walk_to(pos, context = null):
+	if(not _can_move):
+		return
+
 	walk_path = terrain.get_path(get_position(), pos)
 	walk_context = context
 	if walk_path.size() == 0:
@@ -52,6 +60,9 @@ func walk_to(pos, context = null):
 	set_process(true)
 
 func walk(pos, speed, context = null):
+	if(not _can_move):
+		return
+		
 	walk_to(pos, context)
 
 func _find(p_val, p_array, p_flip):
