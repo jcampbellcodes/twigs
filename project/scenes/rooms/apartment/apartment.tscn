@@ -209,6 +209,7 @@ placeholders = {
 
 }
 use_custom_z = false
+to_scene = "res://scenes/rooms/fridge/fridge.tscn"
 
 [node name="fridge" type="Sprite" parent="YSort/item_livingroom_fridge" index="0"]
 
@@ -240,9 +241,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -59.0
-margin_top = -449.0
+margin_top = -448.0
 margin_right = 68.0
-margin_bottom = -38.0
+margin_bottom = -37.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0

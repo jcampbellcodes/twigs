@@ -36,6 +36,7 @@ var _item_active_states = {
     "item_livingroom_television": ITEM_STATE.ACTIVE,
     "item_livingroom_bathroomdoor": ITEM_STATE.ACTIVE,
     "item_livingroom_rug": ITEM_STATE.ACTIVE,
+    "from_fridge_to_apartment": ITEM_STATE.ACTIVE,
 }
 
 # dict of item ids to item state strings. used for anims, etc

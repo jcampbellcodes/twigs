@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/art/bg/insidefridge.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/scripts/managers/background.gd" type="Script" id=2]
+[ext_resource path="res://assets/scripts/managers/terrain.gd" type="Script" id=3]
+[ext_resource path="res://assets/art/maps/black.png" type="Texture" id=4]
+[ext_resource path="res://scenes/rooms/apartment/scene_transition.gd" type="Script" id=5]
+[ext_resource path="res://assets/art/buttons/whitearrow.png" type="Texture" id=6]
+[ext_resource path="res://scenes/gui/hud/hud.tscn" type="PackedScene" id=7]
+
+[sub_resource type="NavigationPolygon" id=1]
+
+vertices = PoolVector2Array( 2275.8, 740.618, 2610, 690.017, 2760, 690.017, 2760, 1080.03, 2168.8, 1017.62, 2201.8, 672.616, 2520, 630.015, 2138.8, 699.617, 2096.8, 644.615, 2022.8, 628.615, 2029.8, 577.614, 1920, 530.013, 2095.86, 1082.51, 1673.8, 1066.63, 812.329, 1073.57, 1342.8, 1049.63, 1165.8, 987.624, 960.8, 879.621, 1188.8, 879.621, 1265.8, 645.616, 1385.8, 685.616, 1519.8, 646.616, 1690.8, 637.615, 2010, 530.013, 1950, 500.012 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 1, 0, 7 ), PoolIntArray( 8, 5, 7, 9 ), PoolIntArray( 10, 8, 9, 11 ), PoolIntArray( 4, 3, 12, 13 ), PoolIntArray( 13, 12, 14 ), PoolIntArray( 15, 13, 14 ), PoolIntArray( 16, 15, 14 ), PoolIntArray( 16, 14, 17, 18 ), PoolIntArray( 18, 17, 19, 20 ), PoolIntArray( 20, 19, 21 ), PoolIntArray( 22, 20, 21 ), PoolIntArray( 22, 21, 11 ), PoolIntArray( 9, 22, 11 ), PoolIntArray( 23, 10, 11, 24 ) ]
+outlines = [ PoolVector2Array( 812.329, 1073.57, 2095.86, 1082.51, 2760, 1080.03, 2760, 690.017, 2610, 690.017, 2520, 630.015, 2201.8, 672.616, 2096.8, 644.615, 2029.8, 577.614, 2010, 530.013, 1950, 500.012, 1920, 530.013, 1519.8, 646.616, 1265.8, 645.616, 960.8, 879.621 ), PoolVector2Array( 1673.8, 1066.63, 1342.8, 1049.63, 1165.8, 987.624, 1188.8, 879.621, 1385.8, 685.616, 1690.8, 637.615, 2022.8, 628.615, 2138.8, 699.617, 2275.8, 740.618, 2168.8, 1017.62 ) ]
+
+[node name="apartment" type="Node2D"]
+
+[node name="YSort" type="YSort" parent="." index="0"]
+
+z_as_relative = false
+sort_enabled = true
+_sections_unfolded = [ "Sort", "Z Index" ]
+
+[node name="background" type="Sprite" parent="YSort" index="0"]
+
+scale = Vector2( 1.15385, 1.17217 )
+z_index = -1
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+action = "walk"
+
+[node name="terrain" type="Navigation2D" parent="YSort" index="1"]
+
+visible = false
+position = Vector2( 0, 240 )
+scale = Vector2( 1, 1.50177 )
+script = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Z", "Z Index" ]
+scales = ExtResource( 4 )
+lightmap = null
+bitmaps_scale = Vector2( 4.59, 1 )
+debug_mode = 0
+lightmap_modulate = Color( 1, 1, 1, 1 )
+scale_min = 0.76
+scale_max = 0.9
+player_speed_multiplier = 1.0
+player_doubleclick_speed_multiplier = 1.5
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="YSort/terrain" index="0"]
+
+position = Vector2( -797, -138.503 )
+scale = Vector2( 1, 0.665865 )
+navpoly = SubResource( 1 )
+enabled = true
+
+[node name="from_fridge_to_apartment" type="Node2D" parent="YSort" index="2"]
+
+position = Vector2( 1874.99, 906.472 )
+scale = Vector2( 2.6567, 6.67275 )
+z_index = 4096
+script = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+interact_position = NodePath("interact_pos")
+dialog_color = null
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+to_scene = "res://scenes/rooms/apartment/apartment.tscn"
+
+[node name="interact_pos" type="Position2D" parent="YSort/from_fridge_to_apartment" index="0"]
+
+position = Vector2( -351.937, 20.0109 )
+scale = Vector2( 4.07587, 0.275205 )
+
+[node name="area" type="TextureButton" parent="YSort/from_fridge_to_apartment" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -317.0
+margin_right = -292.0
+margin_bottom = 71.0
+rect_rotation = 90.0406
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_hover = ExtResource( 6 )
+expand = true
+_sections_unfolded = [ "Material", "Mouse", "Textures", "Theme" ]
+
+[node name="HUD" parent="." index="1" instance=ExtResource( 7 )]
+
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
+
+
