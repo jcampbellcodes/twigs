@@ -30,7 +30,7 @@ var target = Vector2()
 func set_can_move(can_move):
 	_can_move = can_move
 
-func _input(event):
+func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		target = get_global_mouse_position()
 		#walk_to(target)

@@ -2,7 +2,16 @@ extends Node2D
 
 var node = null
 
+var showing_dialog = false
+
 func show_dialog(text, speaker, speed):
+	print("try to show dialog: ")
+	if(showing_dialog):
+		print("not showing dialog")
+		return
+
+	print("showing dialog")
+
 	var scene = load("res://scenes/gui/dialogs/dialog_"+speaker+".tscn")
 	var pos = get_node("dialog_pos").global_position
 	var node = scene.instance()
@@ -17,10 +26,12 @@ func show_dialog(text, speaker, speed):
 	dialog_text.connect("dialog_end", self, "hide_mask")
 
 func show_mask():
+	showing_dialog = true
 	print("mask enabled")
 	get_node("mask").show()
 	
 func hide_mask():
+	showing_dialog = false
 	print("mask disabled")
 	get_node("mask").hide()
 

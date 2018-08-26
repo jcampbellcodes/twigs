@@ -10,4 +10,4 @@ func _ready():
     Input.set_custom_mouse_cursor(cursor_default)
 
     # Changes a specific shape of the cursor (here the IBeam shape)
-    Input.set_custom_mouse_cursor(cursor_hover, Input.CURSOR_IBEAM)
+    Input.set_custom_mouse_cursor(cursor_hover, Input.CURSOR_POINTING_HAND)

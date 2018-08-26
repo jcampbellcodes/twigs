@@ -14,6 +14,8 @@ func input(viewport, event, shape_idx):
 		elif (event.button_index == BUTTON_RIGHT):
 			emit_right_click()
 
+
+
 func get_action():
 	return action
 
@@ -41,6 +43,9 @@ func _enter_tree():
 	add_child(area)
 
 func _ready():
+	# for i in area.get_signal_list():
+	# 	print("\nSignal:")
+	# 	print(i["name"])
 	area.connect("input_event", self, "input")
 	add_to_group("background")
 	if has_node("../player"):

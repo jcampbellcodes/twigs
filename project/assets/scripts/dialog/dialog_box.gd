@@ -36,6 +36,7 @@ func text_advance():
 		if(pages.size() - 1 >= current_page):
 			text = pages[current_page]
 		else:
+			print("ended!")
 			self.emit_signal("dialog_end")
 			get_parent().queue_free()
 			

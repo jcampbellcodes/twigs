@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/art/bg/livingroomkitch.png" type="Texture" id=1]
 [ext_resource path="res://assets/scripts/managers/background.gd" type="Script" id=2]
@@ -9,12 +9,16 @@
 [ext_resource path="res://scenes/rooms/apartment/fridge.gd" type="Script" id=7]
 [ext_resource path="res://assets/art/items/fridge.png" type="Texture" id=8]
 [ext_resource path="res://scenes/entities/characters/liam_player.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/art/items/living_room/bathrmdoor.png" type="Texture" id=10]
-[ext_resource path="res://assets/art/items/living_room/rug.png" type="Texture" id=11]
-[ext_resource path="res://assets/art/items/living_room/couch.png" type="Texture" id=12]
-[ext_resource path="res://assets/art/items/living_room/tablebehindcouch.png" type="Texture" id=13]
-[ext_resource path="res://assets/art/items/living_room/tv.png" type="Texture" id=14]
-[ext_resource path="res://scenes/gui/hud/hud.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/rooms/apartment/bathroomdoor.gd" type="Script" id=10]
+[ext_resource path="res://assets/art/items/living_room/bathrmdoor.png" type="Texture" id=11]
+[ext_resource path="res://scenes/rooms/apartment/rug.gd" type="Script" id=12]
+[ext_resource path="res://assets/art/items/living_room/rug.png" type="Texture" id=13]
+[ext_resource path="res://scenes/rooms/apartment/couch.gd" type="Script" id=14]
+[ext_resource path="res://assets/art/items/living_room/couch.png" type="Texture" id=15]
+[ext_resource path="res://assets/art/items/living_room/tablebehindcouch.png" type="Texture" id=16]
+[ext_resource path="res://scenes/rooms/apartment/television.gd" type="Script" id=17]
+[ext_resource path="res://assets/art/items/living_room/tv.png" type="Texture" id=18]
+[ext_resource path="res://scenes/gui/hud/hud.tscn" type="PackedScene" id=19]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -22,7 +26,7 @@ vertices = PoolVector2Array( 2275.8, 740.618, 2610, 690.017, 2760, 690.017, 2760
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 1, 0, 7 ), PoolIntArray( 8, 5, 7, 9 ), PoolIntArray( 10, 8, 9, 11 ), PoolIntArray( 4, 3, 12, 13 ), PoolIntArray( 13, 12, 14 ), PoolIntArray( 15, 13, 14 ), PoolIntArray( 16, 15, 14 ), PoolIntArray( 16, 14, 17, 18 ), PoolIntArray( 18, 17, 19, 20 ), PoolIntArray( 20, 19, 21 ), PoolIntArray( 22, 20, 21 ), PoolIntArray( 22, 21, 11 ), PoolIntArray( 9, 22, 11 ), PoolIntArray( 23, 10, 11, 24 ) ]
 outlines = [ PoolVector2Array( 812.329, 1073.57, 2095.86, 1082.51, 2760, 1080.03, 2760, 690.017, 2610, 690.017, 2520, 630.015, 2201.8, 672.616, 2096.8, 644.615, 2029.8, 577.614, 2010, 530.013, 1950, 500.012, 1920, 530.013, 1519.8, 646.616, 1265.8, 645.616, 960.8, 879.621 ), PoolVector2Array( 1673.8, 1066.63, 1342.8, 1049.63, 1165.8, 987.624, 1188.8, 879.621, 1385.8, 685.616, 1690.8, 637.615, 2022.8, 628.615, 2138.8, 699.617, 2275.8, 740.618, 2168.8, 1017.62 ) ]
 
-[node name="apartment" type="Node2D" index="0"]
+[node name="apartment" type="Node2D"]
 
 [node name="YSort" type="YSort" parent="." index="0"]
 
@@ -32,7 +36,7 @@ _sections_unfolded = [ "Sort", "Z Index" ]
 
 [node name="background" type="Sprite" parent="YSort" index="0"]
 
-position = Vector2( 0, 1 )
+position = Vector2( -1, 0 )
 scale = Vector2( 1.02083, 1.03704 )
 z_index = -1
 texture = ExtResource( 1 )
@@ -66,7 +70,6 @@ enabled = true
 
 [node name="to_hallway" type="Node2D" parent="YSort" index="2"]
 
-editor/display_folded = true
 position = Vector2( 1874.99, 906.472 )
 scale = Vector2( 2.6567, 6.67275 )
 z_index = 4094
@@ -110,7 +113,7 @@ rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
-mouse_default_cursor_shape = 0
+mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
@@ -119,11 +122,10 @@ shortcut = null
 group = null
 texture_hover = ExtResource( 6 )
 expand = true
-_sections_unfolded = [ "Textures" ]
+_sections_unfolded = [ "Mouse", "Textures" ]
 
 [node name="to_kings_crown" type="Node2D" parent="YSort" index="3"]
 
-editor/display_folded = true
 position = Vector2( 1874.99, 906.472 )
 scale = Vector2( 2.6567, 6.67275 )
 z_index = 4096
@@ -170,7 +172,7 @@ rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
 mouse_filter = 0
-mouse_default_cursor_shape = 0
+mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = false
@@ -179,9 +181,9 @@ shortcut = null
 group = null
 texture_hover = ExtResource( 6 )
 expand = true
-_sections_unfolded = [ "Textures" ]
+_sections_unfolded = [ "Mouse", "Textures" ]
 
-[node name="fridge" type="Node2D" parent="YSort" index="4"]
+[node name="item_livingroom_fridge" type="Node2D" parent="YSort" index="4"]
 
 position = Vector2( 1294, 460 )
 script = ExtResource( 7 )
@@ -207,13 +209,13 @@ placeholders = {
 }
 use_custom_z = false
 
-[node name="fridge2" type="Sprite" parent="YSort/fridge" index="0"]
+[node name="fridge" type="Sprite" parent="YSort/item_livingroom_fridge" index="0"]
 
 position = Vector2( 17, -159 )
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Z Index" ]
 
-[node name="area" type="Area2D" parent="YSort/fridge" index="1"]
+[node name="area2" type="Area2D" parent="YSort/item_livingroom_fridge" index="1"]
 
 position = Vector2( -1294, -460 )
 input_pickable = true
@@ -224,47 +226,190 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="hitbox" type="CollisionPolygon2D" parent="YSort/fridge/area" index="0"]
+[node name="hitbox" type="CollisionPolygon2D" parent="YSort/item_livingroom_fridge/area2" index="0"]
 
+position = Vector2( 0, -0.0820923 )
 build_mode = 0
 polygon = PoolVector2Array( 1242.8, 6.20001, 1390.8, 6.20001, 1383.8, 186.2, 1342.8, 566.2, 1292.8, 520.2, 1261.8, 480.2, 1227.8, 416.2, 1216.8, 342.2, 1221.8, 202.2, 1234.8, 142.2, 1223.8, 63.2 )
 
+[node name="area" type="TextureRect" parent="YSort/item_livingroom_fridge" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -59.0
+margin_top = -449.0
+margin_right = 68.0
+margin_bottom = -38.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+_sections_unfolded = [ "Mouse" ]
+
 [node name="player" parent="YSort" index="5" instance=ExtResource( 9 )]
 
-position = Vector2( 1554.13, 838.135 )
+position = Vector2( 1554.13, 839.135 )
 scale = Vector2( 0.829211, 0.829211 )
 speed = 500
 
 [node name="item_livingroom_bathroomdoor" type="Node2D" parent="YSort" index="6"]
 
+script = ExtResource( 10 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+interact_position = null
+dialog_color = null
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
+
 [node name="sprite" type="Sprite" parent="YSort/item_livingroom_bathroomdoor" index="0"]
 
 position = Vector2( 1590.45, 361.084 )
 scale = Vector2( 1.03293, 1.03293 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
+
+[node name="area" type="TextureRect" parent="YSort/item_livingroom_bathroomdoor" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1475.0
+margin_top = 2.0
+margin_right = 1659.0
+margin_bottom = 649.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+_sections_unfolded = [ "Mouse" ]
 
 [node name="item_livingroom_rug" type="Node2D" parent="YSort" index="7"]
 
-editor/display_folded = true
 position = Vector2( 427, 831 )
 z_index = -1
+script = ExtResource( 12 )
 _sections_unfolded = [ "Z Index" ]
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+interact_position = null
+dialog_color = null
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
 
 [node name="sprite" type="Sprite" parent="YSort/item_livingroom_rug" index="0"]
 
 position = Vector2( 30.4477, 30.0836 )
 scale = Vector2( 1.03293, 1.03293 )
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="area" type="TextureRect" parent="YSort/item_livingroom_rug" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 147.0
+margin_top = -220.0
+margin_right = 220.0
+margin_bottom = 335.0
+rect_rotation = 48.0335
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+_sections_unfolded = [ "Mouse" ]
 
 [node name="item_livingroom_couch" type="Node2D" parent="YSort" index="8"]
 
 position = Vector2( 766, 946 )
+script = ExtResource( 14 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+interact_position = null
+dialog_color = null
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
 
 [node name="sprite" type="Sprite" parent="YSort/item_livingroom_couch" index="0"]
 
 position = Vector2( 14.4477, -152.917 )
 scale = Vector2( 1.03293, 1.03293 )
-texture = ExtResource( 12 )
+texture = ExtResource( 15 )
+
+[node name="area" type="TextureRect" parent="YSort/item_livingroom_couch" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 25.0
+margin_top = -376.0
+margin_right = 329.0
+margin_bottom = 20.0
+rect_rotation = 21.8984
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+_sections_unfolded = [ "Mouse" ]
 
 [node name="item_livingroom_table" type="Node2D" parent="YSort" index="9"]
 
@@ -274,19 +419,59 @@ position = Vector2( 1180, 863 )
 
 position = Vector2( 1.44775, -56.9165 )
 scale = Vector2( 1.03293, 1.03293 )
-texture = ExtResource( 13 )
+texture = ExtResource( 16 )
 
 [node name="item_livingroom_television" type="Node2D" parent="YSort" index="10"]
 
 position = Vector2( 34.9999, 31 )
+script = ExtResource( 17 )
+animations = null
+speed = 300
+scale_on_map = false
+light_on_map = false
+tooltip = ""
+action = ""
+events_path = ""
+global_id = ""
+use_combine = false
+inventory = false
+use_action_menu = true
+interact_angle = -1
+interact_position = null
+dialog_color = null
+talk_animation = "talk"
+active = true
+placeholders = {
+
+}
+use_custom_z = false
 
 [node name="sprite" type="Sprite" parent="YSort/item_livingroom_television" index="0"]
 
-position = Vector2( 210.886, 557.781 )
+position = Vector2( 211.968, 558.863 )
 scale = Vector2( 1.44727, 1.44727 )
-texture = ExtResource( 14 )
+texture = ExtResource( 18 )
 
-[node name="HUD" parent="." index="1" instance=ExtResource( 15 )]
+[node name="area" type="TextureRect" parent="YSort/item_livingroom_television" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -38.0
+margin_top = 319.0
+margin_right = 300.0
+margin_bottom = 638.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+_sections_unfolded = [ "Mouse" ]
+
+[node name="HUD" parent="." index="1" instance=ExtResource( 19 )]
 
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 

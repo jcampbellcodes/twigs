@@ -28,10 +28,14 @@ var _item_active_states = {
     "to_kings_crown": ITEM_STATE.ACTIVE,
     "to_hallway":ITEM_STATE.ACTIVE,
     "to_apartment": ITEM_STATE.ACTIVE,
-    "fridge": ITEM_STATE.ACTIVE,
+    "item_livingroom_fridge": ITEM_STATE.ACTIVE,
     "item_megroom_computer": ITEM_STATE.ACTIVE,
     "item_megroom_bedend": ITEM_STATE.ACTIVE,
     "item_megroom_dresser": ITEM_STATE.ACTIVE,
+    "item_livingroom_couch": ITEM_STATE.ACTIVE,
+    "item_livingroom_television": ITEM_STATE.ACTIVE,
+    "item_livingroom_bathroomdoor": ITEM_STATE.ACTIVE,
+    "item_livingroom_rug": ITEM_STATE.ACTIVE,
 }
 
 # dict of item ids to item state strings. used for anims, etc

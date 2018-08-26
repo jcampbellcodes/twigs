@@ -19,6 +19,7 @@ config/icon="res://assets/art/items/bagoweed.png"
 twigs_model="*res://assets/scripts/managers/twigs_model.gd"
 dialog_static="*res://scenes/managers/dialog_holder.tscn"
 inventory_manager="*res://scenes/managers/inventory_manager.tscn"
+cursor="*res://assets/scripts/gui/cursor.gd"
 
 [display]
 

@@ -1,7 +1,7 @@
 extends "res://assets/scripts/entities/actor.gd"
 
-var cursor_default = load("res://assets/art/buttons/cursor/cursordef_small.png")
-var cursor_hover = load("res://assets/art/buttons/cursor/highcursor_small.png")
+#var cursor_default = load("res://assets/art/buttons/cursor/cursordef_small.png")
+#var cursor_hover = load("res://assets/art/buttons/cursor/highcursor_small.png")
 
 export var tooltip = ""
 export var action = ""
@@ -71,12 +71,12 @@ func get_action():
 func mouse_enter():
 	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "mouse_enter", self)
 	_check_focus(true, false)
-	Input.set_custom_mouse_cursor(cursor_hover)
+	#Input.set_custom_mouse_cursor(cursor_hover)
 
 func mouse_exit():
 	get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "mouse_exit", self)
 	_check_focus(false, false)
-	Input.set_custom_mouse_cursor(cursor_default)
+	#Input.set_custom_mouse_cursor(cursor_default)
 
 func area_input(viewport, event, shape_idx):
 	input(event)
@@ -90,7 +90,7 @@ func input(event):
 			if event.button_index == BUTTON_LEFT:
 				get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "clicked", self, event.get_global_position(), event)
 				self.emit_signal(twigs_model.current_action)
-				Input.set_custom_mouse_cursor(cursor_default)
+				#Input.set_custom_mouse_cursor(cursor_default)
 			elif event.button_index == BUTTON_RIGHT:
 				get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "secondary_click", self, event.get_global_position(), event)
 			_check_focus(true, true)
@@ -110,9 +110,6 @@ func _check_focus(focus, pressed):
 			get_node("_pressed").show()
 		else:
 			get_node("_pressed").hide()
-
-func _input():
-	pass
 
 func get_drag_data(point):
 	printt("get drag data on point ", point, inventory)

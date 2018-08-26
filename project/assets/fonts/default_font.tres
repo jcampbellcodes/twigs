@@ -5,7 +5,7 @@
 [resource]
 
 resource_name = "default_font"
-size = 72
+size = 50
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 1 )
