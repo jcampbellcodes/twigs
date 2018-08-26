@@ -38,15 +38,16 @@ func text_advance():
 		else:
 			print("ended!")
 			self.emit_signal("dialog_end")
-			get_parent().queue_free()
-			
+			get_parent().queue_free()	
 
 func text_update():
 	if(text.length() > visible_characters):
 		visible_characters = visible_characters + 1
 
 func _input(event):
+	
 	if(event.is_action_pressed(confirm_action)):
+		accept_event()
 		if(visible_characters == text.length()):
 			text_advance()
 		else:

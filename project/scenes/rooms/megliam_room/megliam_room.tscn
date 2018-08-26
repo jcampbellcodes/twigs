@@ -21,7 +21,7 @@ vertices = PoolVector2Array( 2230, 1066, 2440, 1095.61, 1613.14, 1095.48, 2070.4
 polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5 ), PoolIntArray( 6, 0, 2 ), PoolIntArray( 2, 7, 8 ), PoolIntArray( 9, 6, 2 ), PoolIntArray( 2, 8, 10, 11 ), PoolIntArray( 9, 2, 11, 3, 5 ) ]
 outlines = [ PoolVector2Array( 862.4, 1093.83, 1613.14, 1095.48, 2440, 1095.61, 2230, 1066, 2121.4, 1011.66, 2060, 895.733, 2121.4, 848.059, 2460, 821.706, 2070.48, 789.846, 1510, 858.719, 1053.4, 851.021, 1021.4, 956.88 ) ]
 
-[node name="apartment" type="Node2D" index="0"]
+[node name="apartment" type="Node2D"]
 
 [node name="YSort" type="YSort" parent="." index="0"]
 
@@ -31,7 +31,7 @@ _sections_unfolded = [ "Sort", "Transform", "Z Index" ]
 
 [node name="background" type="Sprite" parent="YSort" index="0"]
 
-position = Vector2( -0.34668, 2.65332 )
+position = Vector2( 0.72937, 2.65332 )
 scale = Vector2( 1.17788, 1.18125 )
 z_as_relative = false
 texture = ExtResource( 1 )
@@ -65,7 +65,6 @@ enabled = true
 
 [node name="item_megroom_bedend" type="Node2D" parent="YSort" index="2"]
 
-editor/display_folded = true
 position = Vector2( 524, 1050.05 )
 z_index = 2
 script = ExtResource( 5 )
@@ -128,11 +127,12 @@ margin_right = 479.0
 margin_bottom = 54.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
 stretch_mode = 0
+_sections_unfolded = [ "Mouse" ]
 
 [node name="item_megroom_dresser" type="Node2D" parent="YSort" index="3"]
 

@@ -15,4 +15,4 @@ func _ready():
 #	pass
 
 func _gui_input(event):
-	accept_event()
+	pass#accept_event()

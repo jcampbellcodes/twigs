@@ -29,7 +29,7 @@ func show_mask():
 	showing_dialog = true
 	print("mask enabled")
 	get_node("mask").show()
-	
+
 func hide_mask():
 	showing_dialog = false
 	print("mask disabled")

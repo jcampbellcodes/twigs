@@ -89,7 +89,8 @@ func input(event):
 
 			if event.button_index == BUTTON_LEFT:
 				get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "clicked", self, event.get_global_position(), event)
-				self.emit_signal(twigs_model.current_action)
+				if(not dialog_static.showing_dialog):
+					self.emit_signal(twigs_model.current_action)
 				#Input.set_custom_mouse_cursor(cursor_default)
 			elif event.button_index == BUTTON_RIGHT:
 				get_tree().call_group_flags(SceneTree.GROUP_CALL_DEFAULT, "game", "secondary_click", self, event.get_global_position(), event)

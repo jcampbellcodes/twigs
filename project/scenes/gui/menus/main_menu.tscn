@@ -88,14 +88,14 @@ tracks/0/keys = {
 "values": [ Vector2( 1214, 862 ), Vector2( 1226, 862 ), Vector2( 1229, 873 ), Vector2( 1216, 867 ), Vector2( 1211, 869 ), Vector2( 1214, 862 ) ]
 }
 
-[node name="main_menu" type="Control"]
+[node name="main_menu" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1930.0
-margin_bottom = 1101.0
+margin_right = 1920.0
+margin_bottom = 1080.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0

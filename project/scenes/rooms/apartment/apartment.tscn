@@ -26,7 +26,7 @@ vertices = PoolVector2Array( 2275.8, 740.618, 2610, 690.017, 2760, 690.017, 2760
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 1, 0, 7 ), PoolIntArray( 8, 5, 7, 9 ), PoolIntArray( 10, 8, 9, 11 ), PoolIntArray( 4, 3, 12, 13 ), PoolIntArray( 13, 12, 14 ), PoolIntArray( 15, 13, 14 ), PoolIntArray( 16, 15, 14 ), PoolIntArray( 16, 14, 17, 18 ), PoolIntArray( 18, 17, 19, 20 ), PoolIntArray( 20, 19, 21 ), PoolIntArray( 22, 20, 21 ), PoolIntArray( 22, 21, 11 ), PoolIntArray( 9, 22, 11 ), PoolIntArray( 23, 10, 11, 24 ) ]
 outlines = [ PoolVector2Array( 812.329, 1073.57, 2095.86, 1082.51, 2760, 1080.03, 2760, 690.017, 2610, 690.017, 2520, 630.015, 2201.8, 672.616, 2096.8, 644.615, 2029.8, 577.614, 2010, 530.013, 1950, 500.012, 1920, 530.013, 1519.8, 646.616, 1265.8, 645.616, 960.8, 879.621 ), PoolVector2Array( 1673.8, 1066.63, 1342.8, 1049.63, 1165.8, 987.624, 1188.8, 879.621, 1385.8, 685.616, 1690.8, 637.615, 2022.8, 628.615, 2138.8, 699.617, 2275.8, 740.618, 2168.8, 1017.62 ) ]
 
-[node name="apartment" type="Node2D"]
+[node name="apartment" type="Node2D" index="0"]
 
 [node name="YSort" type="YSort" parent="." index="0"]
 
@@ -398,9 +398,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 25.0
-margin_top = -376.0
+margin_top = -375.0
 margin_right = 329.0
-margin_bottom = 20.0
+margin_bottom = 21.0
 rect_rotation = 21.8984
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -409,7 +409,7 @@ mouse_default_cursor_shape = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
 stretch_mode = 0
-_sections_unfolded = [ "Mouse" ]
+_sections_unfolded = [ "Mouse", "Visibility" ]
 
 [node name="item_livingroom_table" type="Node2D" parent="YSort" index="9"]
 
@@ -459,9 +459,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -38.0
-margin_top = 319.0
+margin_top = 320.0
 margin_right = 300.0
-margin_bottom = 638.0
+margin_bottom = 639.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
