@@ -27,7 +27,7 @@ outlines = [ PoolVector2Array( 862.4, 1093.83, 1613.14, 1095.48, 2440, 1095.61, 
 
 z_as_relative = false
 sort_enabled = true
-_sections_unfolded = [ "Sort", "Z Index" ]
+_sections_unfolded = [ "Sort", "Transform", "Z Index" ]
 
 [node name="background" type="Sprite" parent="YSort" index="0"]
 
@@ -37,7 +37,7 @@ z_as_relative = false
 texture = ExtResource( 1 )
 centered = false
 script = ExtResource( 2 )
-_sections_unfolded = [ "Z Index" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 action = "walk"
 
 [node name="terrain" type="Navigation2D" parent="YSort" index="1"]
@@ -65,7 +65,7 @@ enabled = true
 
 [node name="item_megroom_bedend" type="Node2D" parent="YSort" index="2"]
 
-position = Vector2( 524, 1044 )
+position = Vector2( 524, 1050.05 )
 z_index = 2
 script = ExtResource( 5 )
 _sections_unfolded = [ "Z Index" ]
@@ -111,6 +111,7 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="hitbox" type="CollisionPolygon2D" parent="YSort/item_megroom_bedend/area" index="0"]
 
+position = Vector2( -1.1004, 0 )
 build_mode = 0
 polygon = PoolVector2Array( 73.6, -45.8, -140.4, -44.8, -224.4, -55.8, -284.4, -34.8, -361.4, -47.8, -420.4, -22.8, -485.4, 30.2, -502.4, 50.2, 527.6, 57.2, 491.6, 7.19995, 437.6, -17.8, 333.6, -22.8, 290.6, -39.8, 170.6, -50.8, 111.6, -45.8 )
 

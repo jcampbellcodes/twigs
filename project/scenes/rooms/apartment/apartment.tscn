@@ -52,8 +52,8 @@ lightmap = null
 bitmaps_scale = Vector2( 4.59, 1 )
 debug_mode = 0
 lightmap_modulate = Color( 1, 1, 1, 1 )
-scale_min = 0.6
-scale_max = 0.7
+scale_min = 0.76
+scale_max = 0.9
 player_speed_multiplier = 1.0
 player_doubleclick_speed_multiplier = 1.5
 
@@ -183,7 +183,6 @@ _sections_unfolded = [ "Textures" ]
 
 [node name="fridge" type="Node2D" parent="YSort" index="4"]
 
-editor/display_folded = true
 position = Vector2( 1294, 460 )
 script = ExtResource( 7 )
 _sections_unfolded = [ "Z Index" ]
@@ -227,7 +226,6 @@ audio_bus_name = "Master"
 
 [node name="hitbox" type="CollisionPolygon2D" parent="YSort/fridge/area" index="0"]
 
-position = Vector2( -1, 0 )
 build_mode = 0
 polygon = PoolVector2Array( 1242.8, 6.20001, 1390.8, 6.20001, 1383.8, 186.2, 1342.8, 566.2, 1292.8, 520.2, 1261.8, 480.2, 1227.8, 416.2, 1216.8, 342.2, 1221.8, 202.2, 1234.8, 142.2, 1223.8, 63.2 )
 
@@ -241,7 +239,7 @@ speed = 500
 
 [node name="sprite" type="Sprite" parent="YSort/item_livingroom_bathroomdoor" index="0"]
 
-position = Vector2( 1590.45, 360.084 )
+position = Vector2( 1590.45, 361.084 )
 scale = Vector2( 1.03293, 1.03293 )
 texture = ExtResource( 10 )
 
