@@ -3,7 +3,7 @@
 
 Twigs is a point n' click horror game made with [Godot](http://godotengine.org).
 
-## Art, Design, Story by [Leah Ashley](https://twitter.com/lemjeb)
+## Art, Design, Story by [Liam Ashley](https://twitter.com/lemjeb)
 
 
 ## Programming by [Jack Campbell](https://jackcampbellsounds.com)
